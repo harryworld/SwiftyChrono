@@ -63,6 +63,13 @@ private func baseOption(strictMode: Bool) -> ModeOptio {
         ZHHantTimeExpressionParser(strictMode: strictMode),
         ZHHantWeekdayParser(strictMode: strictMode),
         
+        // ZH-Hans
+        ZHHansCasualDateParser(strictMode: strictMode),
+        ZHHansDateParser(strictMode: strictMode),
+        ZHHansDeadlineFormatParser(strictMode: strictMode),
+        ZHHansTimeExpressionParser(strictMode: strictMode),
+        ZHHansWeekdayParser(strictMode: strictMode),
+        
     ], refiners: [
         // Removing overlaping first
         OverlapRemovalRefiner(),
