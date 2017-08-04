@@ -29,5 +29,14 @@ class TestDE: ChronoJSXCTestCase {
             evalJS(js, fileName: fileName)
         }
     }
+    
+    func testInvalidMonthName() {
+        Chrono.sixMinutesFixBefore1900 = true
+        Chrono.preferredLanguage = .german
+        
+        let chrono = Chrono()
+        let results = chrono.parse("1 Augu")
+        XCTAssertEqual(results.length, 0)
+    }
 }
 
