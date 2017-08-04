@@ -37,4 +37,78 @@ class TestEN: ChronoJSXCTestCase {
             evalJS(js, fileName: fileName)
         }
     }
+    
+    func test24Hour() {
+        Chrono.sixMinutesFixBefore1900 = true
+        Chrono.preferredLanguage = .english
+        
+        let chrono = Chrono()
+        let results = chrono.parse("1100")
+        XCTAssertEqual(results.length, 1)
+    }
+    
+    func test24Hour1() {
+        Chrono.sixMinutesFixBefore1900 = true
+        Chrono.preferredLanguage = .english
+        
+        let chrono = Chrono()
+        let results = chrono.parse("0100")
+        XCTAssertEqual(results.length, 1)
+    }
+    
+    func test24Hour2() {
+        Chrono.sixMinutesFixBefore1900 = true
+        Chrono.preferredLanguage = .english
+        
+        let chrono = Chrono()
+        let results = chrono.parse("100")
+        XCTAssertEqual(results.length, 1)
+    }
+    
+    func test24Hour3() {
+        Chrono.sixMinutesFixBefore1900 = true
+        Chrono.preferredLanguage = .english
+        
+        let chrono = Chrono()
+        let results = chrono.parse("110")
+        XCTAssertEqual(results.length, 1)
+        
+        if let result = results.first {
+            XCTAssertEqual(result.text, "110")
+            XCTAssertEqual(result.start.date.hour, 1)
+            XCTAssertEqual(result.start.date.minute, 10)
+        }
+    }
+    
+    func test24HourInStrictMode() {
+        Chrono.sixMinutesFixBefore1900 = true
+        Chrono.preferredLanguage = .english
+        
+        let chrono = Chrono(modeOption: strictModeOption())
+        
+        let results = chrono.parse("32 August 2014")
+        XCTAssertEqual(results.length, 1)
+        
+        if let result = results.first {
+            XCTAssertEqual(result.text, "2014")
+            XCTAssertEqual(result.start.date.hour, 20)
+            XCTAssertEqual(result.start.date.minute, 14)
+        }
+    }
+    
+    func test24HourInStrictMode2() {
+        Chrono.sixMinutesFixBefore1900 = true
+        Chrono.preferredLanguage = .english
+        
+        let chrono = Chrono(modeOption: strictModeOption())
+        
+        let results = chrono.parse("2014/22/29")
+        XCTAssertEqual(results.length, 1)
+        
+        if let result = results.first {
+            XCTAssertEqual(result.text, "2014")
+            XCTAssertEqual(result.start.date.hour, 20)
+            XCTAssertEqual(result.start.date.minute, 14)
+        }
+    }
 }

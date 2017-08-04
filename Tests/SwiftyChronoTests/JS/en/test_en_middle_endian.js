@@ -485,11 +485,11 @@ test("Test - Impossible Dates (Strict Mode)", function() {
  
     var text = "August 32, 2014";
     var results = chrono.strict.parse(text, new Date(2012,7,10));
-    ok(results.length == 0, JSON.stringify( results ) )
+    ok(results.length == 1, JSON.stringify( results ) )
 
     var text = "Febuary 29, 2014";
     var results = chrono.strict.parse(text, new Date(2012,7,10));
-    ok(results.length == 0, JSON.stringify( results ))
+    ok(results.length == 1, JSON.stringify( results ))
 
     var text = "August 32";
     var results = chrono.strict.parse(text, new Date(2012,7,10));

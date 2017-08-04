@@ -32,6 +32,8 @@ private let SECOND_REG_PATTERN = "^\\s*" +
     "(?:\\s*(A\\.M\\.|P\\.M\\.|AM?|PM?))?" +
     "(?=\\W|$)"
 
+private let PATTERN_24HR = "^([01]?\\d|2[0-3]):?([0-5]\\d)$"
+
 private let hourGroup = 2
 private let minuteGroup = 3
 private let secondGroup = 4
@@ -80,7 +82,16 @@ public class ENTimeExpressionParser: Parser {
             meridiem = 0
             hour = 0
         } else {
-            hour = Int(hourText)!
+            switch hourText.characters.count {
+            case 3:
+                hour = Int(hourText.substring(from: 0, to: 1))!
+                minute = Int(hourText.substring(from: 1, to: 3))!
+            case 4:
+                hour = Int(hourText.substring(from: 0, to: 2))!
+                minute = Int(hourText.substring(from: 2, to: 4))!
+            default:
+                hour = Int(hourText)!
+            }
         }
         
         // ----- Minutes
@@ -138,6 +149,12 @@ public class ENTimeExpressionParser: Parser {
         guard let match = regex?.firstMatch(in: secondText, range: NSRange(location: 0, length: secondText.characters.count)) else {
             // Not accept number only result
             if NSRegularExpression.isMatch(forPattern: "^\\d+$", in: result.text) {
+                
+                // Except 24 hour format
+                if NSRegularExpression.isMatch(forPattern: PATTERN_24HR, in: result.text) {
+                    return result
+                }
+                
                 return nil
             }
             
