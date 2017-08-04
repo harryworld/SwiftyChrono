@@ -7,6 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06FF1BA11F331ABF00AFA448 /* ZHHansCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9C1F331ABF00AFA448 /* ZHHansCasualDateParser.swift */; };
+		06FF1BA21F331ABF00AFA448 /* ZHHansDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9D1F331ABF00AFA448 /* ZHHansDateParser.swift */; };
+		06FF1BA31F331ABF00AFA448 /* ZHHansDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9E1F331ABF00AFA448 /* ZHHansDeadlineFormatParser.swift */; };
+		06FF1BA41F331ABF00AFA448 /* ZHHansTimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9F1F331ABF00AFA448 /* ZHHansTimeExpressionParser.swift */; };
+		06FF1BA51F331ABF00AFA448 /* ZHHansWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1BA01F331ABF00AFA448 /* ZHHansWeekdayParser.swift */; };
+		06FF1BA61F331AD200AFA448 /* ZHHansCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9C1F331ABF00AFA448 /* ZHHansCasualDateParser.swift */; };
+		06FF1BA71F331AD200AFA448 /* ZHHansDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9D1F331ABF00AFA448 /* ZHHansDateParser.swift */; };
+		06FF1BA81F331AD200AFA448 /* ZHHansDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9E1F331ABF00AFA448 /* ZHHansDeadlineFormatParser.swift */; };
+		06FF1BA91F331AD200AFA448 /* ZHHansTimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9F1F331ABF00AFA448 /* ZHHansTimeExpressionParser.swift */; };
+		06FF1BAA1F331AD200AFA448 /* ZHHansWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1BA01F331ABF00AFA448 /* ZHHansWeekdayParser.swift */; };
+		06FF1BAB1F331AD300AFA448 /* ZHHansCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9C1F331ABF00AFA448 /* ZHHansCasualDateParser.swift */; };
+		06FF1BAC1F331AD300AFA448 /* ZHHansDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9D1F331ABF00AFA448 /* ZHHansDateParser.swift */; };
+		06FF1BAD1F331AD300AFA448 /* ZHHansDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9E1F331ABF00AFA448 /* ZHHansDeadlineFormatParser.swift */; };
+		06FF1BAE1F331AD300AFA448 /* ZHHansTimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9F1F331ABF00AFA448 /* ZHHansTimeExpressionParser.swift */; };
+		06FF1BAF1F331AD300AFA448 /* ZHHansWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1BA01F331ABF00AFA448 /* ZHHansWeekdayParser.swift */; };
+		06FF1BB01F331AD300AFA448 /* ZHHansCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9C1F331ABF00AFA448 /* ZHHansCasualDateParser.swift */; };
+		06FF1BB11F331AD300AFA448 /* ZHHansDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9D1F331ABF00AFA448 /* ZHHansDateParser.swift */; };
+		06FF1BB21F331AD300AFA448 /* ZHHansDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9E1F331ABF00AFA448 /* ZHHansDeadlineFormatParser.swift */; };
+		06FF1BB31F331AD300AFA448 /* ZHHansTimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9F1F331ABF00AFA448 /* ZHHansTimeExpressionParser.swift */; };
+		06FF1BB41F331AD300AFA448 /* ZHHansWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1BA01F331ABF00AFA448 /* ZHHansWeekdayParser.swift */; };
+		06FF1BB51F331AD400AFA448 /* ZHHansCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9C1F331ABF00AFA448 /* ZHHansCasualDateParser.swift */; };
+		06FF1BB61F331AD400AFA448 /* ZHHansDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9D1F331ABF00AFA448 /* ZHHansDateParser.swift */; };
+		06FF1BB71F331AD400AFA448 /* ZHHansDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9E1F331ABF00AFA448 /* ZHHansDeadlineFormatParser.swift */; };
+		06FF1BB81F331AD400AFA448 /* ZHHansTimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9F1F331ABF00AFA448 /* ZHHansTimeExpressionParser.swift */; };
+		06FF1BB91F331AD400AFA448 /* ZHHansWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1BA01F331ABF00AFA448 /* ZHHansWeekdayParser.swift */; };
+		06FF1BBA1F331AD400AFA448 /* ZHHansCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9C1F331ABF00AFA448 /* ZHHansCasualDateParser.swift */; };
+		06FF1BBB1F331AD400AFA448 /* ZHHansDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9D1F331ABF00AFA448 /* ZHHansDateParser.swift */; };
+		06FF1BBC1F331AD400AFA448 /* ZHHansDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9E1F331ABF00AFA448 /* ZHHansDeadlineFormatParser.swift */; };
+		06FF1BBD1F331AD400AFA448 /* ZHHansTimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9F1F331ABF00AFA448 /* ZHHansTimeExpressionParser.swift */; };
+		06FF1BBE1F331AD400AFA448 /* ZHHansWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1BA01F331ABF00AFA448 /* ZHHansWeekdayParser.swift */; };
+		06FF1BBF1F331AD500AFA448 /* ZHHansCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9C1F331ABF00AFA448 /* ZHHansCasualDateParser.swift */; };
+		06FF1BC01F331AD500AFA448 /* ZHHansDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9D1F331ABF00AFA448 /* ZHHansDateParser.swift */; };
+		06FF1BC11F331AD500AFA448 /* ZHHansDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9E1F331ABF00AFA448 /* ZHHansDeadlineFormatParser.swift */; };
+		06FF1BC21F331AD500AFA448 /* ZHHansTimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B9F1F331ABF00AFA448 /* ZHHansTimeExpressionParser.swift */; };
+		06FF1BC31F331AD500AFA448 /* ZHHansWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1BA01F331ABF00AFA448 /* ZHHansWeekdayParser.swift */; };
+		06FF1BC51F331B0500AFA448 /* ZHHansUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1BC41F331B0500AFA448 /* ZHHansUtil.swift */; };
+		06FF1BC61F331B2300AFA448 /* ZHHansUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1BC41F331B0500AFA448 /* ZHHansUtil.swift */; };
+		06FF1BC71F331B2400AFA448 /* ZHHansUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1BC41F331B0500AFA448 /* ZHHansUtil.swift */; };
+		06FF1BC81F331B2400AFA448 /* ZHHansUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1BC41F331B0500AFA448 /* ZHHansUtil.swift */; };
+		06FF1BC91F331B2500AFA448 /* ZHHansUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1BC41F331B0500AFA448 /* ZHHansUtil.swift */; };
+		06FF1BCA1F331B2600AFA448 /* ZHHansUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1BC41F331B0500AFA448 /* ZHHansUtil.swift */; };
+		06FF1BCB1F331B2600AFA448 /* ZHHansUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1BC41F331B0500AFA448 /* ZHHansUtil.swift */; };
 		BBB55ABD1C8F80020050DDA9 /* SwiftyChrono.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBB55AB21C8F80020050DDA9 /* SwiftyChrono.framework */; };
 		BBB55AC21C8F80020050DDA9 /* SwiftyChronoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB55AC11C8F80020050DDA9 /* SwiftyChronoTests.swift */; };
 		BBB55ADE1C8F88F20050DDA9 /* SwiftyChrono.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBB55AD41C8F88F20050DDA9 /* SwiftyChrono.framework */; };
@@ -890,6 +932,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06FF1B9C1F331ABF00AFA448 /* ZHHansCasualDateParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHHansCasualDateParser.swift; sourceTree = "<group>"; };
+		06FF1B9D1F331ABF00AFA448 /* ZHHansDateParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHHansDateParser.swift; sourceTree = "<group>"; };
+		06FF1B9E1F331ABF00AFA448 /* ZHHansDeadlineFormatParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHHansDeadlineFormatParser.swift; sourceTree = "<group>"; };
+		06FF1B9F1F331ABF00AFA448 /* ZHHansTimeExpressionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHHansTimeExpressionParser.swift; sourceTree = "<group>"; };
+		06FF1BA01F331ABF00AFA448 /* ZHHansWeekdayParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHHansWeekdayParser.swift; sourceTree = "<group>"; };
+		06FF1BC41F331B0500AFA448 /* ZHHansUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHHansUtil.swift; sourceTree = "<group>"; };
 		BB086D9E1DF5AEF400CBF8BB /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		BB241BC51DD9F6490067F917 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		BB241BC71DD9F7D60067F917 /* SwiftyChrono.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = SwiftyChrono.podspec; sourceTree = "<group>"; };
@@ -1091,6 +1139,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06FF1B9B1F331ABF00AFA448 /* ZHHans */ = {
+			isa = PBXGroup;
+			children = (
+				06FF1B9C1F331ABF00AFA448 /* ZHHansCasualDateParser.swift */,
+				06FF1B9D1F331ABF00AFA448 /* ZHHansDateParser.swift */,
+				06FF1B9E1F331ABF00AFA448 /* ZHHansDeadlineFormatParser.swift */,
+				06FF1B9F1F331ABF00AFA448 /* ZHHansTimeExpressionParser.swift */,
+				06FF1BA01F331ABF00AFA448 /* ZHHansWeekdayParser.swift */,
+			);
+			path = ZHHans;
+			sourceTree = "<group>";
+		};
 		BBB55AA81C8F80020050DDA9 = {
 			isa = PBXGroup;
 			children = (
@@ -1301,6 +1361,7 @@
 				C47EB2381E2E0408000F3D38 /* JP */,
 				C43A7A351E49C548005E3BFF /* DE */,
 				C44EC66E1E582F58003F0E72 /* ZHHant */,
+				06FF1B9B1F331ABF00AFA448 /* ZHHans */,
 				C40D6A7C1E2F294F00796D93 /* Parser.swift */,
 			);
 			path = Parsers;
@@ -1420,6 +1481,7 @@
 				C43A79BA1E487FE1005E3BFF /* FRUtil.swift */,
 				C43A7A121E48BD37005E3BFF /* JPUtil.swift */,
 				C43A7A261E4986AA005E3BFF /* DEUtil.swift */,
+				06FF1BC41F331B0500AFA448 /* ZHHansUtil.swift */,
 				C44EC67F1E583047003F0E72 /* ZHHantUtil.swift */,
 			);
 			path = Utils;
@@ -2032,6 +2094,8 @@
 				C4ED15AC1E373E5B00C4676B /* ForwardDateRefiner.swift in Sources */,
 				C43A7A371E49C784005E3BFF /* DECasualDateParser.swift in Sources */,
 				C4169A121E2F7195007B7423 /* Refiner.swift in Sources */,
+				06FF1BA41F331ABF00AFA448 /* ZHHansTimeExpressionParser.swift in Sources */,
+				06FF1BA21F331ABF00AFA448 /* ZHHansDateParser.swift in Sources */,
 				C44EC6801E583047003F0E72 /* ZHHantUtil.swift in Sources */,
 				C4169A1A1E2F7BC8007B7423 /* ENCasualTimeParser.swift in Sources */,
 				C4169A221E2F8209007B7423 /* Util.swift in Sources */,
@@ -2041,12 +2105,14 @@
 				C43A79D31E48861C005E3BFF /* FRTimeAgoFormatParser.swift in Sources */,
 				C43A7AC81E4AD446005E3BFF /* DEDeadlineFormatParser.swift in Sources */,
 				C4DFF43F1E30CA1000E851B1 /* ENDeadlineFormatParser.swift in Sources */,
+				06FF1BA51F331ABF00AFA448 /* ZHHansWeekdayParser.swift in Sources */,
 				C40E0F1B1E4C0D9100629263 /* DEMonthNameLittleEndianParser.swift in Sources */,
 				C4B94A731E35E61800B703E7 /* ENTimeAgoFormatParser.swift in Sources */,
 				C4ED159C1E37115D00C4676B /* ExtractTimezoneAbbrRefiner.swift in Sources */,
 				C43A79CB1E4883D3005E3BFF /* FRSlashDateFormatParser.swift in Sources */,
 				C4ED15B41E37448400C4676B /* OverlapRemovalRefiner.swift in Sources */,
 				C44EC6551E560421003F0E72 /* DEMergeDateTimeRefiner.swift in Sources */,
+				06FF1BA11F331ABF00AFA448 /* ZHHansCasualDateParser.swift in Sources */,
 				C43A7A131E48BD37005E3BFF /* JPUtil.swift in Sources */,
 				C4B94A931E36170A00B703E7 /* ENPrioritizeSpecificDateRefiner.swift in Sources */,
 				C4169A021E2F6E19007B7423 /* Chrono.swift in Sources */,
@@ -2069,6 +2135,7 @@
 				C43A79BB1E487FE1005E3BFF /* FRUtil.swift in Sources */,
 				C4ED15A41E3735FD00C4676B /* ExtractTimezoneOffsetRefiner.swift in Sources */,
 				C4169A2A1E307CE6007B7423 /* ENCasualDateParser.swift in Sources */,
+				06FF1BC51F331B0500AFA448 /* ZHHansUtil.swift in Sources */,
 				C4ED15BC1E3757FC00C4676B /* UnlikelyFormatFilter.swift in Sources */,
 				C44EC6981E583941003F0E72 /* ZHHantWeekdayParser.swift in Sources */,
 				C44EC6781E582F8A003F0E72 /* ZHHantDateParser.swift in Sources */,
@@ -2080,6 +2147,7 @@
 				C43A7A0B1E48BD0D005E3BFF /* JPStandardParser.swift in Sources */,
 				C411C5071E55926D00CC7C47 /* DECasualTimeParser.swift in Sources */,
 				C43A79931E4863C1005E3BFF /* ESTimeExpressionParser.swift in Sources */,
+				06FF1BA31F331ABF00AFA448 /* ZHHansDeadlineFormatParser.swift in Sources */,
 				C43A7A1B1E48D116005E3BFF /* JPMergeDateRangeRefiner.swift in Sources */,
 				C43A79631E484E76005E3BFF /* ESCasualDateParser.swift in Sources */,
 				C43A02DD1E30A8C50041B7B1 /* ENMergeDateTimeRefiner.swift in Sources */,
@@ -2104,8 +2172,10 @@
 				C4DFF4531E31A3FF00E851B1 /* ENISOFormatParser.swift in Sources */,
 				C43A7A231E48D395005E3BFF /* TestJP.swift in Sources */,
 				C43A79671E484E76005E3BFF /* ESCasualDateParser.swift in Sources */,
+				06FF1BB51F331AD400AFA448 /* ZHHansCasualDateParser.swift in Sources */,
 				C4B94A971E36170A00B703E7 /* ENPrioritizeSpecificDateRefiner.swift in Sources */,
 				C4B94A871E360D4B00B703E7 /* ENWeekdayParser.swift in Sources */,
+				06FF1BB71F331AD400AFA448 /* ZHHansDeadlineFormatParser.swift in Sources */,
 				C4ED15C01E3757FC00C4676B /* UnlikelyFormatFilter.swift in Sources */,
 				C4B94A771E35E61800B703E7 /* ENTimeAgoFormatParser.swift in Sources */,
 				C4FE689A1E31FB0800C04AD9 /* ENMergeDateRangeRefiner.swift in Sources */,
@@ -2114,6 +2184,7 @@
 				C43A79771E485BC0005E3BFF /* ESUtil.swift in Sources */,
 				C4ED15A81E3735FD00C4676B /* ExtractTimezoneOffsetRefiner.swift in Sources */,
 				C4B94A571E35973F00B703E7 /* ENRelativeDateFormatParser.swift in Sources */,
+				06FF1BB81F331AD400AFA448 /* ZHHansTimeExpressionParser.swift in Sources */,
 				C40D6A811E2F294F00796D93 /* Parser.swift in Sources */,
 				C4169A261E2F8209007B7423 /* Util.swift in Sources */,
 				C43A79EF1E488A13005E3BFF /* FRMergeDateRangeRefiner.swift in Sources */,
@@ -2129,6 +2200,7 @@
 				C43A79871E485F61005E3BFF /* ESSlashDateFormatParser.swift in Sources */,
 				C43A7A2B1E4986AA005E3BFF /* DEUtil.swift in Sources */,
 				C40992911E321FC10009CA05 /* ENMonthNameParser.swift in Sources */,
+				06FF1BB91F331AD400AFA448 /* ZHHansWeekdayParser.swift in Sources */,
 				C43A7A0F1E48BD0D005E3BFF /* JPStandardParser.swift in Sources */,
 				C411C50B1E55926D00CC7C47 /* DECasualTimeParser.swift in Sources */,
 				C44EC68C1E583921003F0E72 /* ZHHantDeadlineFormatParser.swift in Sources */,
@@ -2147,12 +2219,14 @@
 				C44EC6491E55E82B003F0E72 /* DEMergeDateRangeRefiner.swift in Sources */,
 				C4169A061E2F6E19007B7423 /* Chrono.swift in Sources */,
 				C4B94A7F1E35FA9200B703E7 /* ENTimeExpressionParser.swift in Sources */,
+				06FF1BB61F331AD400AFA448 /* ZHHansDateParser.swift in Sources */,
 				C43A79CF1E4883D3005E3BFF /* FRSlashDateFormatParser.swift in Sources */,
 				C43A79FF1E488CC2005E3BFF /* TestFR.swift in Sources */,
 				C44EC6611E575AA8003F0E72 /* DEMorgenTimeParser.swift in Sources */,
 				C43A796F1E485743005E3BFF /* ESDeadlineFormatParser.swift in Sources */,
 				C4169A1E1E2F7BC8007B7423 /* ENCasualTimeParser.swift in Sources */,
 				C47EB2431E2E0797000F3D38 /* Result.swift in Sources */,
+				06FF1BC91F331B2500AFA448 /* ZHHansUtil.swift in Sources */,
 				C43A79BF1E487FE1005E3BFF /* FRUtil.swift in Sources */,
 				C4169A2E1E307CE6007B7423 /* ENCasualDateParser.swift in Sources */,
 				C40E0F231E4C235100629263 /* TestDE.swift in Sources */,
@@ -2199,6 +2273,8 @@
 				C4ED15AD1E373E5B00C4676B /* ForwardDateRefiner.swift in Sources */,
 				C43A7A381E49C784005E3BFF /* DECasualDateParser.swift in Sources */,
 				C4169A131E2F7195007B7423 /* Refiner.swift in Sources */,
+				06FF1BA91F331AD200AFA448 /* ZHHansTimeExpressionParser.swift in Sources */,
+				06FF1BA71F331AD200AFA448 /* ZHHansDateParser.swift in Sources */,
 				C44EC6811E583047003F0E72 /* ZHHantUtil.swift in Sources */,
 				C4169A1B1E2F7BC8007B7423 /* ENCasualTimeParser.swift in Sources */,
 				C4169A231E2F8209007B7423 /* Util.swift in Sources */,
@@ -2208,12 +2284,14 @@
 				C43A79D41E48861C005E3BFF /* FRTimeAgoFormatParser.swift in Sources */,
 				C43A7AC91E4AD446005E3BFF /* DEDeadlineFormatParser.swift in Sources */,
 				C4DFF4401E30CA1000E851B1 /* ENDeadlineFormatParser.swift in Sources */,
+				06FF1BAA1F331AD200AFA448 /* ZHHansWeekdayParser.swift in Sources */,
 				C40E0F1C1E4C0D9100629263 /* DEMonthNameLittleEndianParser.swift in Sources */,
 				C4B94A741E35E61800B703E7 /* ENTimeAgoFormatParser.swift in Sources */,
 				C4ED159D1E37115D00C4676B /* ExtractTimezoneAbbrRefiner.swift in Sources */,
 				C43A79CC1E4883D3005E3BFF /* FRSlashDateFormatParser.swift in Sources */,
 				C4ED15B51E37448400C4676B /* OverlapRemovalRefiner.swift in Sources */,
 				C44EC6561E560421003F0E72 /* DEMergeDateTimeRefiner.swift in Sources */,
+				06FF1BA61F331AD200AFA448 /* ZHHansCasualDateParser.swift in Sources */,
 				C43A7A141E48BD37005E3BFF /* JPUtil.swift in Sources */,
 				C4B94A941E36170A00B703E7 /* ENPrioritizeSpecificDateRefiner.swift in Sources */,
 				C4169A031E2F6E19007B7423 /* Chrono.swift in Sources */,
@@ -2236,6 +2314,7 @@
 				C43A79BC1E487FE1005E3BFF /* FRUtil.swift in Sources */,
 				C4ED15A51E3735FD00C4676B /* ExtractTimezoneOffsetRefiner.swift in Sources */,
 				C4169A2B1E307CE6007B7423 /* ENCasualDateParser.swift in Sources */,
+				06FF1BC61F331B2300AFA448 /* ZHHansUtil.swift in Sources */,
 				C4ED15BD1E3757FC00C4676B /* UnlikelyFormatFilter.swift in Sources */,
 				C44EC6991E583942003F0E72 /* ZHHantWeekdayParser.swift in Sources */,
 				C44EC6791E582F8A003F0E72 /* ZHHantDateParser.swift in Sources */,
@@ -2247,6 +2326,7 @@
 				C43A7A0C1E48BD0D005E3BFF /* JPStandardParser.swift in Sources */,
 				C411C5081E55926D00CC7C47 /* DECasualTimeParser.swift in Sources */,
 				C43A79941E4863C1005E3BFF /* ESTimeExpressionParser.swift in Sources */,
+				06FF1BA81F331AD200AFA448 /* ZHHansDeadlineFormatParser.swift in Sources */,
 				C43A7A1C1E48D116005E3BFF /* JPMergeDateRangeRefiner.swift in Sources */,
 				C43A79641E484E76005E3BFF /* ESCasualDateParser.swift in Sources */,
 				C43A02DE1E30A8C50041B7B1 /* ENMergeDateTimeRefiner.swift in Sources */,
@@ -2271,8 +2351,10 @@
 				C4DFF4541E31A3FF00E851B1 /* ENISOFormatParser.swift in Sources */,
 				C43A7A241E48D395005E3BFF /* TestJP.swift in Sources */,
 				C43A79681E484E76005E3BFF /* ESCasualDateParser.swift in Sources */,
+				06FF1BBA1F331AD400AFA448 /* ZHHansCasualDateParser.swift in Sources */,
 				C4B94A981E36170A00B703E7 /* ENPrioritizeSpecificDateRefiner.swift in Sources */,
 				C4B94A881E360D4B00B703E7 /* ENWeekdayParser.swift in Sources */,
+				06FF1BBC1F331AD400AFA448 /* ZHHansDeadlineFormatParser.swift in Sources */,
 				C4ED15C11E3757FC00C4676B /* UnlikelyFormatFilter.swift in Sources */,
 				C4B94A781E35E61800B703E7 /* ENTimeAgoFormatParser.swift in Sources */,
 				C4FE689B1E31FB0800C04AD9 /* ENMergeDateRangeRefiner.swift in Sources */,
@@ -2281,6 +2363,7 @@
 				C43A79781E485BC0005E3BFF /* ESUtil.swift in Sources */,
 				C4ED15A91E3735FD00C4676B /* ExtractTimezoneOffsetRefiner.swift in Sources */,
 				C4B94A581E35973F00B703E7 /* ENRelativeDateFormatParser.swift in Sources */,
+				06FF1BBD1F331AD400AFA448 /* ZHHansTimeExpressionParser.swift in Sources */,
 				C40D6A821E2F294F00796D93 /* Parser.swift in Sources */,
 				C4169A271E2F8209007B7423 /* Util.swift in Sources */,
 				C43A79F01E488A13005E3BFF /* FRMergeDateRangeRefiner.swift in Sources */,
@@ -2296,6 +2379,7 @@
 				C43A79881E485F61005E3BFF /* ESSlashDateFormatParser.swift in Sources */,
 				C43A7A2C1E4986AA005E3BFF /* DEUtil.swift in Sources */,
 				C40992921E321FC10009CA05 /* ENMonthNameParser.swift in Sources */,
+				06FF1BBE1F331AD400AFA448 /* ZHHansWeekdayParser.swift in Sources */,
 				C43A7A101E48BD0D005E3BFF /* JPStandardParser.swift in Sources */,
 				C411C50C1E55926D00CC7C47 /* DECasualTimeParser.swift in Sources */,
 				C44EC68D1E583921003F0E72 /* ZHHantDeadlineFormatParser.swift in Sources */,
@@ -2314,12 +2398,14 @@
 				C44EC64A1E55E82B003F0E72 /* DEMergeDateRangeRefiner.swift in Sources */,
 				C4169A071E2F6E19007B7423 /* Chrono.swift in Sources */,
 				C4B94A801E35FA9200B703E7 /* ENTimeExpressionParser.swift in Sources */,
+				06FF1BBB1F331AD400AFA448 /* ZHHansDateParser.swift in Sources */,
 				C43A79D01E4883D3005E3BFF /* FRSlashDateFormatParser.swift in Sources */,
 				C43A7A001E488CC2005E3BFF /* TestFR.swift in Sources */,
 				C44EC6621E575AA8003F0E72 /* DEMorgenTimeParser.swift in Sources */,
 				C43A79701E485743005E3BFF /* ESDeadlineFormatParser.swift in Sources */,
 				C4169A1F1E2F7BC8007B7423 /* ENCasualTimeParser.swift in Sources */,
 				C47EB2441E2E0797000F3D38 /* Result.swift in Sources */,
+				06FF1BCA1F331B2600AFA448 /* ZHHansUtil.swift in Sources */,
 				C43A79C01E487FE1005E3BFF /* FRUtil.swift in Sources */,
 				C4169A2F1E307CE6007B7423 /* ENCasualDateParser.swift in Sources */,
 				C40E0F241E4C235100629263 /* TestDE.swift in Sources */,
@@ -2366,6 +2452,8 @@
 				C4ED15AE1E373E5B00C4676B /* ForwardDateRefiner.swift in Sources */,
 				C43A7A391E49C784005E3BFF /* DECasualDateParser.swift in Sources */,
 				C4169A141E2F7195007B7423 /* Refiner.swift in Sources */,
+				06FF1BAE1F331AD300AFA448 /* ZHHansTimeExpressionParser.swift in Sources */,
+				06FF1BAC1F331AD300AFA448 /* ZHHansDateParser.swift in Sources */,
 				C44EC6821E583047003F0E72 /* ZHHantUtil.swift in Sources */,
 				C4169A1C1E2F7BC8007B7423 /* ENCasualTimeParser.swift in Sources */,
 				C4169A241E2F8209007B7423 /* Util.swift in Sources */,
@@ -2375,12 +2463,14 @@
 				C43A79D51E48861C005E3BFF /* FRTimeAgoFormatParser.swift in Sources */,
 				C43A7ACA1E4AD446005E3BFF /* DEDeadlineFormatParser.swift in Sources */,
 				C4DFF4411E30CA1000E851B1 /* ENDeadlineFormatParser.swift in Sources */,
+				06FF1BAF1F331AD300AFA448 /* ZHHansWeekdayParser.swift in Sources */,
 				C40E0F1D1E4C0D9100629263 /* DEMonthNameLittleEndianParser.swift in Sources */,
 				C4B94A751E35E61800B703E7 /* ENTimeAgoFormatParser.swift in Sources */,
 				C4ED159E1E37115D00C4676B /* ExtractTimezoneAbbrRefiner.swift in Sources */,
 				C43A79CD1E4883D3005E3BFF /* FRSlashDateFormatParser.swift in Sources */,
 				C4ED15B61E37448400C4676B /* OverlapRemovalRefiner.swift in Sources */,
 				C44EC6571E560421003F0E72 /* DEMergeDateTimeRefiner.swift in Sources */,
+				06FF1BAB1F331AD300AFA448 /* ZHHansCasualDateParser.swift in Sources */,
 				C43A7A151E48BD37005E3BFF /* JPUtil.swift in Sources */,
 				C4B94A951E36170A00B703E7 /* ENPrioritizeSpecificDateRefiner.swift in Sources */,
 				C4169A041E2F6E19007B7423 /* Chrono.swift in Sources */,
@@ -2403,6 +2493,7 @@
 				C43A79BD1E487FE1005E3BFF /* FRUtil.swift in Sources */,
 				C4ED15A61E3735FD00C4676B /* ExtractTimezoneOffsetRefiner.swift in Sources */,
 				C4169A2C1E307CE6007B7423 /* ENCasualDateParser.swift in Sources */,
+				06FF1BC71F331B2400AFA448 /* ZHHansUtil.swift in Sources */,
 				C4ED15BE1E3757FC00C4676B /* UnlikelyFormatFilter.swift in Sources */,
 				C44EC69A1E583942003F0E72 /* ZHHantWeekdayParser.swift in Sources */,
 				C44EC67A1E582F8A003F0E72 /* ZHHantDateParser.swift in Sources */,
@@ -2414,6 +2505,7 @@
 				C43A7A0D1E48BD0D005E3BFF /* JPStandardParser.swift in Sources */,
 				C411C5091E55926D00CC7C47 /* DECasualTimeParser.swift in Sources */,
 				C43A79951E4863C1005E3BFF /* ESTimeExpressionParser.swift in Sources */,
+				06FF1BAD1F331AD300AFA448 /* ZHHansDeadlineFormatParser.swift in Sources */,
 				C43A7A1D1E48D116005E3BFF /* JPMergeDateRangeRefiner.swift in Sources */,
 				C43A79651E484E76005E3BFF /* ESCasualDateParser.swift in Sources */,
 				C43A02DF1E30A8C50041B7B1 /* ENMergeDateTimeRefiner.swift in Sources */,
@@ -2445,6 +2537,8 @@
 				C4ED15AF1E373E5B00C4676B /* ForwardDateRefiner.swift in Sources */,
 				C43A7A3A1E49C784005E3BFF /* DECasualDateParser.swift in Sources */,
 				C4169A151E2F7195007B7423 /* Refiner.swift in Sources */,
+				06FF1BB31F331AD300AFA448 /* ZHHansTimeExpressionParser.swift in Sources */,
+				06FF1BB11F331AD300AFA448 /* ZHHansDateParser.swift in Sources */,
 				C44EC6831E583047003F0E72 /* ZHHantUtil.swift in Sources */,
 				C4169A1D1E2F7BC8007B7423 /* ENCasualTimeParser.swift in Sources */,
 				C4169A251E2F8209007B7423 /* Util.swift in Sources */,
@@ -2454,12 +2548,14 @@
 				C43A79D61E48861C005E3BFF /* FRTimeAgoFormatParser.swift in Sources */,
 				C43A7ACB1E4AD446005E3BFF /* DEDeadlineFormatParser.swift in Sources */,
 				C4DFF4421E30CA1000E851B1 /* ENDeadlineFormatParser.swift in Sources */,
+				06FF1BB41F331AD300AFA448 /* ZHHansWeekdayParser.swift in Sources */,
 				C40E0F1E1E4C0D9100629263 /* DEMonthNameLittleEndianParser.swift in Sources */,
 				C4B94A761E35E61800B703E7 /* ENTimeAgoFormatParser.swift in Sources */,
 				C4ED159F1E37115D00C4676B /* ExtractTimezoneAbbrRefiner.swift in Sources */,
 				C43A79CE1E4883D3005E3BFF /* FRSlashDateFormatParser.swift in Sources */,
 				C4ED15B71E37448400C4676B /* OverlapRemovalRefiner.swift in Sources */,
 				C44EC6581E560421003F0E72 /* DEMergeDateTimeRefiner.swift in Sources */,
+				06FF1BB01F331AD300AFA448 /* ZHHansCasualDateParser.swift in Sources */,
 				C43A7A161E48BD37005E3BFF /* JPUtil.swift in Sources */,
 				C4B94A961E36170A00B703E7 /* ENPrioritizeSpecificDateRefiner.swift in Sources */,
 				C4169A051E2F6E19007B7423 /* Chrono.swift in Sources */,
@@ -2482,6 +2578,7 @@
 				C43A79BE1E487FE1005E3BFF /* FRUtil.swift in Sources */,
 				C4ED15A71E3735FD00C4676B /* ExtractTimezoneOffsetRefiner.swift in Sources */,
 				C4169A2D1E307CE6007B7423 /* ENCasualDateParser.swift in Sources */,
+				06FF1BC81F331B2400AFA448 /* ZHHansUtil.swift in Sources */,
 				C4ED15BF1E3757FC00C4676B /* UnlikelyFormatFilter.swift in Sources */,
 				C44EC69B1E583942003F0E72 /* ZHHantWeekdayParser.swift in Sources */,
 				C44EC67B1E582F8A003F0E72 /* ZHHantDateParser.swift in Sources */,
@@ -2493,6 +2590,7 @@
 				C43A7A0E1E48BD0D005E3BFF /* JPStandardParser.swift in Sources */,
 				C411C50A1E55926D00CC7C47 /* DECasualTimeParser.swift in Sources */,
 				C43A79961E4863C1005E3BFF /* ESTimeExpressionParser.swift in Sources */,
+				06FF1BB21F331AD300AFA448 /* ZHHansDeadlineFormatParser.swift in Sources */,
 				C43A7A1E1E48D116005E3BFF /* JPMergeDateRangeRefiner.swift in Sources */,
 				C43A79661E484E76005E3BFF /* ESCasualDateParser.swift in Sources */,
 				C43A02E01E30A8C50041B7B1 /* ENMergeDateTimeRefiner.swift in Sources */,
@@ -2517,8 +2615,10 @@
 				C4DFF4551E31A3FF00E851B1 /* ENISOFormatParser.swift in Sources */,
 				C43A7A251E48D395005E3BFF /* TestJP.swift in Sources */,
 				C43A79691E484E76005E3BFF /* ESCasualDateParser.swift in Sources */,
+				06FF1BBF1F331AD500AFA448 /* ZHHansCasualDateParser.swift in Sources */,
 				C4B94A991E36170A00B703E7 /* ENPrioritizeSpecificDateRefiner.swift in Sources */,
 				C4B94A891E360D4B00B703E7 /* ENWeekdayParser.swift in Sources */,
+				06FF1BC11F331AD500AFA448 /* ZHHansDeadlineFormatParser.swift in Sources */,
 				C4ED15C21E3757FC00C4676B /* UnlikelyFormatFilter.swift in Sources */,
 				C4B94A791E35E61800B703E7 /* ENTimeAgoFormatParser.swift in Sources */,
 				C4FE689C1E31FB0800C04AD9 /* ENMergeDateRangeRefiner.swift in Sources */,
@@ -2527,6 +2627,7 @@
 				C43A79791E485BC0005E3BFF /* ESUtil.swift in Sources */,
 				C4ED15AA1E3735FD00C4676B /* ExtractTimezoneOffsetRefiner.swift in Sources */,
 				C4B94A591E35973F00B703E7 /* ENRelativeDateFormatParser.swift in Sources */,
+				06FF1BC21F331AD500AFA448 /* ZHHansTimeExpressionParser.swift in Sources */,
 				C40D6A831E2F294F00796D93 /* Parser.swift in Sources */,
 				C4169A281E2F8209007B7423 /* Util.swift in Sources */,
 				C43A79F11E488A13005E3BFF /* FRMergeDateRangeRefiner.swift in Sources */,
@@ -2542,6 +2643,7 @@
 				C43A79891E485F61005E3BFF /* ESSlashDateFormatParser.swift in Sources */,
 				C43A7A2D1E4986AA005E3BFF /* DEUtil.swift in Sources */,
 				C40992931E321FC10009CA05 /* ENMonthNameParser.swift in Sources */,
+				06FF1BC31F331AD500AFA448 /* ZHHansWeekdayParser.swift in Sources */,
 				C43A7A111E48BD0D005E3BFF /* JPStandardParser.swift in Sources */,
 				C411C50D1E55926D00CC7C47 /* DECasualTimeParser.swift in Sources */,
 				C44EC68E1E583921003F0E72 /* ZHHantDeadlineFormatParser.swift in Sources */,
@@ -2560,12 +2662,14 @@
 				C44EC64B1E55E82B003F0E72 /* DEMergeDateRangeRefiner.swift in Sources */,
 				C4169A081E2F6E19007B7423 /* Chrono.swift in Sources */,
 				C4B94A811E35FA9200B703E7 /* ENTimeExpressionParser.swift in Sources */,
+				06FF1BC01F331AD500AFA448 /* ZHHansDateParser.swift in Sources */,
 				C43A79D11E4883D3005E3BFF /* FRSlashDateFormatParser.swift in Sources */,
 				C43A7A011E488CC2005E3BFF /* TestFR.swift in Sources */,
 				C44EC6631E575AA8003F0E72 /* DEMorgenTimeParser.swift in Sources */,
 				C43A79711E485743005E3BFF /* ESDeadlineFormatParser.swift in Sources */,
 				C4169A201E2F7BC8007B7423 /* ENCasualTimeParser.swift in Sources */,
 				C47EB2451E2E0797000F3D38 /* Result.swift in Sources */,
+				06FF1BCB1F331B2600AFA448 /* ZHHansUtil.swift in Sources */,
 				C43A79C11E487FE1005E3BFF /* FRUtil.swift in Sources */,
 				C4169A301E307CE6007B7423 /* ENCasualDateParser.swift in Sources */,
 				C40E0F251E4C235100629263 /* TestDE.swift in Sources */,
