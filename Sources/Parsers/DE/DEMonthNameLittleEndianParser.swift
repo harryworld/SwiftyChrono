@@ -49,10 +49,12 @@ public class DEMonthNameLittleEndianParser: Parser {
             DE_ORDINAL_WORDS[match.string(from: text, atRangeIndex: dateGroup).trimmed().lowercased()]!
         
         if match.isNotEmpty(atRangeIndex: yearGroup) {
-            var year = Int(match.string(from: text, atRangeIndex: yearGroup))!
+            let yearText = match.string(from: text, atRangeIndex: yearGroup)
+            var year = Int(yearText)!
             
             if match.isNotEmpty(atRangeIndex: yearBeGroup) {
                 let yearBe = match.string(from: text, atRangeIndex: yearBeGroup)
+                result.yearBE = yearBe
                 
                 if NSRegularExpression.isMatch(forPattern: "v", in: yearBe) {
                     // Before Christ
@@ -68,6 +70,7 @@ public class DEMonthNameLittleEndianParser: Parser {
             result.start.assign(.day, value: day)
             result.start.assign(.month, value: month)
             result.start.assign(.year, value: year)
+            result.yearText = yearText
         } else {
             //Find the most appropriated year
             var refMoment = ref
