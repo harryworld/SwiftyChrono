@@ -111,4 +111,166 @@ class TestEN: ChronoJSXCTestCase {
             XCTAssertEqual(result.start.date.minute, 14)
         }
     }
+    
+    func testDateTimeRefiner() {
+        Chrono.sixMinutesFixBefore1900 = true
+        Chrono.preferredLanguage = .english
+        
+        let chrono = Chrono()
+        let results = chrono.parse(
+            "b 20 Aug 2000",
+            Date(), [
+                .yearRemoval: 1
+            ])
+        XCTAssertEqual(results.length, 1)
+        
+        if let result = results.first {
+            print(result.text)
+            XCTAssertEqual(result.start.date.day, 20)
+            XCTAssertEqual(result.start.date.month, 8)
+            XCTAssertEqual(result.start.date.hour, 20)
+            XCTAssertEqual(result.start.date.minute, 00)
+        }
+    }
+    
+    func testDateTimeRefiner2() {
+        Chrono.sixMinutesFixBefore1900 = true
+        Chrono.preferredLanguage = .english
+        
+        let chrono = Chrono()
+        let results = chrono.parse("20 Aug 2000 BC")
+        XCTAssertEqual(results.length, 1)
+        
+        if let result = results.first {
+            print(result.text)
+            XCTAssertEqual(result.start.date.day, 20)
+            XCTAssertEqual(result.start.date.month, 8)
+            XCTAssertNotEqual(result.start.date.year, 2000)
+        }
+    }
+    
+    func testDateTimeRefiner3() {
+        Chrono.sixMinutesFixBefore1900 = true
+        Chrono.preferredLanguage = .english
+        
+        let chrono = Chrono()
+        let results = chrono.parse("20 Aug 1997 AD")
+        XCTAssertEqual(results.length, 1)
+        
+        if let result = results.first {
+            print(result.text)
+            XCTAssertEqual(result.start.date.day, 20)
+            XCTAssertEqual(result.start.date.month, 8)
+            XCTAssertEqual(result.start.date.year, 1997)
+        }
+    }
+    
+    func testDateTimeRefinerPastYear() {
+        Chrono.sixMinutesFixBefore1900 = true
+        Chrono.preferredLanguage = .english
+        
+        let now = Date()
+        
+        let chrono = Chrono()
+        let results = chrono.parse(
+            "Aug 2000",
+            now, [
+                .yearRemoval: 1,
+                .forwardDate: 1
+            ])
+        XCTAssertEqual(results.length, 1)
+        
+        if let result = results.first {
+            print(result.text)
+            XCTAssertEqual(result.start.date.month, 8)
+            XCTAssertEqual(result.start.date.hour, 20)
+        }
+    }
+    
+    func testDateTimeRefinerPastYearNextMonth() {
+        Chrono.sixMinutesFixBefore1900 = true
+        // Remark: Use all parsers
+        // Chrono.preferredLanguage = .english
+        
+        let chrono = Chrono()
+        let results = chrono.parse(
+            "17 Sep 2000",
+            Date(), [
+                .yearRemoval: 1
+            ])
+        XCTAssertEqual(results.length, 1)
+        
+        if let result = results.first {
+            print(result.text)
+            XCTAssertNotEqual(result.start.date.year, 2000)
+            XCTAssertEqual(result.start.date.month, 9)
+            XCTAssertEqual(result.start.date.day, 17)
+            XCTAssertEqual(result.start.date.hour, 20)
+        }
+    }
+    
+    func testDateTimeRefinerPastMonth() {
+        Chrono.sixMinutesFixBefore1900 = true
+        // Chrono.preferredLanguage = .english
+        
+        let now = Date()
+        
+        let chrono = Chrono()
+        let results = chrono.parse(
+            "1 Jan 1700",
+            now, [
+                .yearRemoval: 1,
+                .forwardDate: 1
+            ])
+        XCTAssertEqual(results.length, 1)
+        
+        if let result = results.first {
+            print(result.text)
+            XCTAssertTrue(result.start.date > now)
+            XCTAssertEqual(result.start.date.year, now.year + 1)
+            XCTAssertEqual(result.start.date.month, 1)
+            XCTAssertEqual(result.start.date.day, 1)
+            XCTAssertEqual(result.start.date.hour, 17)
+        }
+    }
+    
+    func testDateTimeRefinerFutureYear() {
+        Chrono.sixMinutesFixBefore1900 = true
+        Chrono.preferredLanguage = .english
+        
+        let chrono = Chrono()
+        let results = chrono.parse("b 20 Aug 2020")
+        XCTAssertEqual(results.length, 1)
+        
+        if let result = results.first {
+            print(result.text)
+            XCTAssertEqual(result.start.date.day, 20)
+            XCTAssertEqual(result.start.date.month, 8)
+            XCTAssertEqual(result.start.date.year, 2020)
+            XCTAssertNotEqual(result.start.date.hour, 20)
+        }
+    }
+    
+    func testDateTimeRefinerFutureYearUpperBound() {
+        Chrono.sixMinutesFixBefore1900 = true
+        Chrono.preferredLanguage = .english
+        
+        let chrono = Chrono()
+        let results = chrono.parse(
+            "b 20 Aug 2050",
+            Date(), [
+                .yearRemoval: 1
+            ])
+        XCTAssertEqual(results.length, 1)
+        
+        if let result = results.first {
+            print(result.text)
+            XCTAssertEqual(result.start.date.day, 20)
+            XCTAssertEqual(result.start.date.month, 8)
+            XCTAssertNotEqual(result.start.date.year, 2050)
+            XCTAssertEqual(result.start.date.hour, 20)
+            XCTAssertEqual(result.start.date.minute, 50)
+        }
+    }
+    
 }

@@ -9,6 +9,7 @@
 import Foundation
 
 public enum OptionType: String { case
+    yearRemoval = "yearRemoval",
     morning = "morning",
     afternoon = "afternoon",
     evening = "evening",

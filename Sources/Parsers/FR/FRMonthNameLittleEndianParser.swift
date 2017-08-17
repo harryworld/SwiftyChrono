@@ -37,10 +37,12 @@ public class FRMonthNameLittleEndianParser: Parser {
         let day = Int(match.string(from: text, atRangeIndex: dateGroup).replacingOccurrences(of: "er", with: ""))!
         
         if match.isNotEmpty(atRangeIndex: yearGroup) {
-            var year = Int(match.string(from: text, atRangeIndex: yearGroup).trimmed())!
+            let yearText = match.string(from: text, atRangeIndex: yearGroup)
+            var year = Int(yearText.trimmed())!
             
             if match.isNotEmpty(atRangeIndex: yearBeGroup) {
                 let yearBe = match.string(from: text, atRangeIndex: yearBeGroup)
+                result.yearBE = yearBe
                 if NSRegularExpression.isMatch(forPattern: "a", in: yearBe) {
                     // Ante Christe natum
                     year = -year
@@ -53,6 +55,7 @@ public class FRMonthNameLittleEndianParser: Parser {
             result.start.assign(.day, value: day)
             result.start.assign(.month, value: month)
             result.start.assign(.year, value: year)
+            result.yearText = yearText
         } else {
             //Find the most appropriated year
             var refMoment = ref

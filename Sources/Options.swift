@@ -65,6 +65,7 @@ private func baseOption(strictMode: Bool) -> ModeOptio {
         
     ], refiners: [
         // Removing overlaping first
+        YearRemovalRefiner(),
         OverlapRemovalRefiner(),
         ForwardDateRefiner(),
         
