@@ -163,16 +163,74 @@ class TestEN: ChronoJSXCTestCase {
         }
     }
     
+    func testPastMonthOnly() {
+        Chrono.sixMinutesFixBefore1900 = true
+        Chrono.preferredLanguage = .english
+        
+        var dateComponents = DateComponents()
+        dateComponents.year = 2017
+        dateComponents.month = 8
+        dateComponents.day = 18
+        dateComponents.calendar = Calendar.current
+        
+        let chrono = Chrono()
+        let results = chrono.parse(
+            "Aug",
+            dateComponents.date!, [
+                .forwardDate: 1
+            ])
+        XCTAssertEqual(results.length, 1)
+        
+        if let result = results.first {
+            print(result.text)
+            XCTAssertEqual(result.start.date.month, 8)
+            XCTAssertEqual(result.start.date.year, 2018)
+        }
+    }
+    
+    func testSameDay() {
+        Chrono.sixMinutesFixBefore1900 = true
+        Chrono.preferredLanguage = .english
+        
+        var dateComponents = DateComponents()
+        dateComponents.year = 2017
+        dateComponents.month = 8
+        dateComponents.day = 18
+        dateComponents.hour = 15
+        dateComponents.timeZone = TimeZone(abbreviation: "HKT")
+        dateComponents.calendar = Calendar.current
+        
+        let chrono = Chrono()
+        let results = chrono.parse(
+            "18 Aug 8pm",
+            dateComponents.date!, [
+                .forwardDate: 1
+            ])
+        XCTAssertEqual(results.length, 1)
+        
+        if let result = results.first {
+            print(result.text)
+            XCTAssertEqual(result.start.date.hour, 20)
+            XCTAssertEqual(result.start.date.day, 18)
+            XCTAssertEqual(result.start.date.month, 8)
+            XCTAssertEqual(result.start.date.year, 2017)
+        }
+    }
+    
     func testDateTimeRefinerPastYear() {
         Chrono.sixMinutesFixBefore1900 = true
         Chrono.preferredLanguage = .english
         
-        let now = Date()
+        var dateComponents = DateComponents()
+        dateComponents.year = 2017
+        dateComponents.month = 8
+        dateComponents.day = 18
+        dateComponents.calendar = Calendar.current
         
         let chrono = Chrono()
         let results = chrono.parse(
             "Aug 2000",
-            now, [
+            dateComponents.date!, [
                 .forwardDate: 1
             ])
         XCTAssertEqual(results.length, 1)

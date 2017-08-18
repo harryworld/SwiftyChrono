@@ -22,7 +22,7 @@ class ForwardDateRefiner: Refiner {
             var result = results[i]
             var refMoment = result.ref
             
-            if result.start.isCertain(component: .day) && result.start.isCertain(component: .month) &&
+            if /*result.start.isCertain(component: .day) &&*/ result.start.isCertain(component: .month) &&
                 !result.start.isCertain(component: .year) && refMoment.isAfter(result.start.moment) {
                 // Adjust year into the future
                 for _ in 0..<3 {
