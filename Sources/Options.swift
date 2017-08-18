@@ -72,8 +72,8 @@ private func baseOption(strictMode: Bool) -> ModeOptio {
         
     ], refiners: [
         // Removing overlaping first
+        YearRemovalRefiner(),
         OverlapRemovalRefiner(),
-        ForwardDateRefiner(),
         
         // ETC
         ENMergeDateTimeRefiner(),
@@ -85,6 +85,7 @@ private func baseOption(strictMode: Bool) -> ModeOptio {
         DEMergeDateTimeRefiner(),
         DEMergeDateRangeRefiner(),
         
+        ForwardDateRefiner(),
         // Extract additional info later
         ExtractTimezoneOffsetRefiner(),
         ExtractTimezoneAbbrRefiner(),

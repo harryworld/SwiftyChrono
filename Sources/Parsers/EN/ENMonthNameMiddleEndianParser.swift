@@ -50,10 +50,12 @@ public class ENMonthNameMiddleEndianParser: Parser {
         
         let yearGroupNotEmpty = match.isNotEmpty(atRangeIndex: yearGroup)
         if yearGroupNotEmpty || match.isNotEmpty(atRangeIndex: yearGroup2) {
-            var year = Int(match.string(from: text, atRangeIndex: yearGroupNotEmpty ? yearGroup : yearGroup2))!
+            let yearText = match.string(from: text, atRangeIndex: yearGroupNotEmpty ? yearGroup : yearGroup2)
+            var year = Int(yearText)!
             
             let yearBE = match.isNotEmpty(atRangeIndex: yearBeGroup) ? match.string(from: text, atRangeIndex: yearBeGroup) : match.isNotEmpty(atRangeIndex: yearBeGroup2) ? match.string(from: text, atRangeIndex: yearBeGroup2) : ""
             if !yearBE.isEmpty {
+                result.yearBE = yearBE
                 if NSRegularExpression.isMatch(forPattern: "BE", in: yearBE) {
                     // Buddhist Era
                     year = year - 543
@@ -68,6 +70,7 @@ public class ENMonthNameMiddleEndianParser: Parser {
             result.start.assign(.day, value: day)
             result.start.assign(.month, value: month)
             result.start.assign(.year, value: year)
+            result.yearText = yearText
         } else {
             //Find the most appropriated year
             var refMoment = ref

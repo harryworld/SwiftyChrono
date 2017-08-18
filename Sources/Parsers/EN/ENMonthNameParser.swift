@@ -31,10 +31,12 @@ public class ENMonthNameParser: Parser {
         let day = 1
         
         if match.isNotEmpty(atRangeIndex: yearGroup) {
-            var year = Int(match.string(from: text, atRangeIndex: yearGroup))!
+            let yearText = match.string(from: text, atRangeIndex: yearGroup)
+            var year = Int(yearText)!
             
             if match.isNotEmpty(atRangeIndex: yearBeGroup) {
                 let yearBe = match.string(from: text, atRangeIndex: yearBeGroup)
+                result.yearBE = yearBe
                 
                 if NSRegularExpression.isMatch(forPattern: "BE", in: yearBe) {
                     // Buddhist Era
@@ -53,6 +55,7 @@ public class ENMonthNameParser: Parser {
             result.start.imply(.day, to: day)
             result.start.assign(.month, value: month)
             result.start.assign(.year, value: year)
+            result.yearText = yearText
         } else {
             //Find the most appropriated year
             var refMoment = ref

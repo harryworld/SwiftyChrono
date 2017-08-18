@@ -15,6 +15,8 @@ public struct ParsedResult {
     public var tags: [TagUnit: Bool]
     public var start: ParsedComponents
     public var end: ParsedComponents?
+    public var yearBE: String?
+    public var yearText: String?
     
     // used for parsing logic controll
     public let isMoveIndexMode: Bool

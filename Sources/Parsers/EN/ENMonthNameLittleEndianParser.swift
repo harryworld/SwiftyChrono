@@ -46,10 +46,12 @@ public class ENMonthNameLittleEndianParser: Parser {
             EN_ORDINAL_WORDS[match.string(from: text, atRangeIndex: dateGroup).trimmed().replacingOccurrences(of: "-", with: " ").lowercased()]!
         
         if match.isNotEmpty(atRangeIndex: yearGroup) {
-            var year = Int(match.string(from: text, atRangeIndex: yearGroup))!
+            let yearText = match.string(from: text, atRangeIndex: yearGroup)
+            var year = Int(yearText)!
             
             if match.isNotEmpty(atRangeIndex: yearBeGroup) {
                 let yearBe = match.string(from: text, atRangeIndex: yearBeGroup)
+                result.yearBE = yearBe
                 
                 if NSRegularExpression.isMatch(forPattern: "BE", in: yearBe) {
                     // Buddhist Era
@@ -68,6 +70,15 @@ public class ENMonthNameLittleEndianParser: Parser {
             result.start.assign(.day, value: day)
             result.start.assign(.month, value: month)
             result.start.assign(.year, value: year)
+            result.yearText = yearText
+            
+//            if year < 2017 && !match.isNotEmpty(atRangeIndex: yearBeGroup) {
+//                result.start.imply(.year, to: ref.year)
+//                let yearText = match.string(from: text, atRangeIndex: yearGroup)
+//                result.text = result.text.replacingOccurrences(of: yearText, with: "")
+//            } else {
+//                result.start.assign(.year, value: year)
+//            }
         } else {
             //Find the most appropriated year
             var refMoment = ref
