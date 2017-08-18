@@ -70,6 +70,9 @@ private func baseOption(strictMode: Bool) -> ModeOptio {
         ZHHansTimeExpressionParser(strictMode: strictMode),
         ZHHansWeekdayParser(strictMode: strictMode),
         
+        // RU
+        RUCasualDateParser(strictMode: strictMode),
+        
     ], refiners: [
         // Removing overlaping first
         YearRemovalRefiner(),
@@ -131,5 +134,5 @@ func casualModeOption() -> ModeOptio {
 }
 
 public enum Language {
-    case english, spanish, french, japanese, german, chinese
+    case english, spanish, french, japanese, german, chinese, russian
 }
