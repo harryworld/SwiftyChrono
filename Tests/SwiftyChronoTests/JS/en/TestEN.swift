@@ -38,6 +38,15 @@ class TestEN: ChronoJSXCTestCase {
         }
     }
     
+    func testMayConflict() {
+        Chrono.sixMinutesFixBefore1900 = true
+        Chrono.preferredLanguage = .english
+        
+        let chrono = Chrono()
+        let results = chrono.parse("May.")
+        XCTAssertEqual(results.length, 1)
+    }
+    
     func test24Hour() {
         Chrono.sixMinutesFixBefore1900 = true
         Chrono.preferredLanguage = .english
