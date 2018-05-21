@@ -43,6 +43,7 @@ let EN_MONTH_OFFSET = [
     "apr": 4,
     "apr.": 4,
     "may": 5,
+    "may.": 5,
     "june": 6,
     "jun": 6,
     "jun.": 6,
