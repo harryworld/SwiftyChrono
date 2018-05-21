@@ -36,7 +36,7 @@ public class DEDeadlineFormatParser: Parser {
         } else if NSRegularExpression.isMatch(forPattern: "halbe", in: numberText) {
             number = HALF
         } else {
-            number = Int(numberText)!
+            number = Int(numberText) ?? 0
         }
         
         var date = ref
