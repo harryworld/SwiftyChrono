@@ -16,10 +16,10 @@ private let regex_24 = try! NSRegularExpression(pattern: PATTERN_24HR, options: 
 class UnlikelyFormatFilter: Filter {
     override func isValid(text: String, result: ParsedResult, opt: [OptionType: Int]) -> Bool {
         let textToMatch = result.text.replacingOccurrences(of: " ", with: "")
-        let match = regex.firstMatch(in: textToMatch, range: NSRange(location: 0, length: textToMatch.characters.count))
+        let match = regex.firstMatch(in: textToMatch, range: NSRange(location: 0, length: textToMatch.count))
         
         if match != nil {
-            let match24Hour = regex_24.firstMatch(in: textToMatch, range: NSRange(location: 0, length: textToMatch.characters.count))
+            let match24Hour = regex_24.firstMatch(in: textToMatch, range: NSRange(location: 0, length: textToMatch.count))
             return match24Hour != nil
         } else {
             return true

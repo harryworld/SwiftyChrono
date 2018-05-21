@@ -43,7 +43,7 @@ let ZHHANS_WEEKDAY_OFFSET_PATTERN = "[" + ZHHANS_WEEKDAY_OFFSET.keys.joined(sepa
 func ZHHANSStringToNumber(text: String) -> Int {
     var number = 0;
     
-    for char in text.characters.map({ String($0) }) {
+    for char in text.map({ String($0) }) {
         let n = ZHHANS_NUMBER[char]!
         if char == "十" {
             number = number == 0 ? n : number * n
@@ -58,7 +58,7 @@ func ZHHANSStringToNumber(text: String) -> Int {
 func ZHHANSStringToYear(text: String) -> Int {
     var string = ""
     
-    for char in text.characters.map({ String($0) }) {
+    for char in text.map({ String($0) }) {
         string += "\(ZHHANS_NUMBER[char]!)"
     }
     

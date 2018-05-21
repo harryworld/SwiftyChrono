@@ -82,7 +82,7 @@ public class ENTimeExpressionParser: Parser {
             meridiem = 0
             hour = 0
         } else {
-            switch hourText.characters.count {
+            switch hourText.count {
             case 3:
                 hour = Int(hourText.substring(from: 0, to: 1)) ?? 0
                 minute = Int(hourText.substring(from: 1, to: 3)) ?? 0
@@ -116,7 +116,7 @@ public class ENTimeExpressionParser: Parser {
                 return nil
             }
             
-            let ampm = String(match.string(from: text, atRangeIndex: amPmHourGroup).characters.first!).lowercased()
+            let ampm = String(match.string(from: text, atRangeIndex: amPmHourGroup).first!).lowercased()
             if ampm == "a" {
                 meridiem = 0
                 if hour == 12 {
@@ -145,8 +145,8 @@ public class ENTimeExpressionParser: Parser {
         // ==============================================================
         
         let regex = try? NSRegularExpression(pattern: SECOND_REG_PATTERN, options: .caseInsensitive)
-        let secondText = text.substring(from: result.index + result.text.characters.count)
-        guard let match = regex?.firstMatch(in: secondText, range: NSRange(location: 0, length: secondText.characters.count)) else {
+        let secondText = text.substring(from: result.index + result.text.count)
+        guard let match = regex?.firstMatch(in: secondText, range: NSRange(location: 0, length: secondText.count)) else {
             // Not accept number only result
             if NSRegularExpression.isMatch(forPattern: "^\\d+$", in: result.text) {
                 
@@ -212,7 +212,7 @@ public class ENTimeExpressionParser: Parser {
                 return nil
             }
             
-            let ampm = String(match.string(from: secondText, atRangeIndex: amPmHourGroup).characters.first!).lowercased()
+            let ampm = String(match.string(from: secondText, atRangeIndex: amPmHourGroup).first!).lowercased()
             if ampm == "a" {
                 meridiem = 0
                 if hour == 12 {
