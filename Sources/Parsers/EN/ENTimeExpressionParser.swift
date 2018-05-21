@@ -84,19 +84,19 @@ public class ENTimeExpressionParser: Parser {
         } else {
             switch hourText.characters.count {
             case 3:
-                hour = Int(hourText.substring(from: 0, to: 1))!
-                minute = Int(hourText.substring(from: 1, to: 3))!
+                hour = Int(hourText.substring(from: 0, to: 1)) ?? 0
+                minute = Int(hourText.substring(from: 1, to: 3)) ?? 0
             case 4:
-                hour = Int(hourText.substring(from: 0, to: 2))!
-                minute = Int(hourText.substring(from: 2, to: 4))!
+                hour = Int(hourText.substring(from: 0, to: 2)) ?? 0
+                minute = Int(hourText.substring(from: 2, to: 4)) ?? 0
             default:
-                hour = Int(hourText)!
+                hour = Int(hourText) ?? 0
             }
         }
         
         // ----- Minutes
         if match.isNotEmpty(atRangeIndex: minuteGroup) {
-            minute = Int(match.string(from: text, atRangeIndex: minuteGroup))!
+            minute = Int(match.string(from: text, atRangeIndex: minuteGroup)) ?? 0
         } else if hour > 100 {
             minute = hour % 100
             hour = hour/100
@@ -177,7 +177,7 @@ public class ENTimeExpressionParser: Parser {
         
         // ----- Second
         if match.isNotEmpty(atRangeIndex: secondGroup) {
-            let second = Int(match.string(from: secondText, atRangeIndex: secondGroup))!
+            let second = Int(match.string(from: secondText, atRangeIndex: secondGroup)) ?? 0
             if second >= 60 {
                 return nil
             }
@@ -185,11 +185,11 @@ public class ENTimeExpressionParser: Parser {
             result.end?.assign(.second, value: second)
         }
         
-        hour = Int(match.string(from: secondText, atRangeIndex: hourGroup))!
+        hour = Int(match.string(from: secondText, atRangeIndex: hourGroup)) ?? 0
         
         // ----- Minute
         if match.isNotEmpty(atRangeIndex: minuteGroup) {
-            minute = Int(match.string(from: secondText, atRangeIndex: minuteGroup))!
+            minute = Int(match.string(from: secondText, atRangeIndex: minuteGroup)) ?? 0
             if minute >= 60 {
                 return result
             }

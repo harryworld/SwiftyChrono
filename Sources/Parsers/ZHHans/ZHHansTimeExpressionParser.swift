@@ -119,7 +119,8 @@ public class ZHHansTimeExpressionParser: Parser {
         }
         
         var hourString = match.string(from: text, atRangeIndex: hourGroup)
-        hour = NSRegularExpression.isMatch(forPattern: "\\d+", in: hourString) ? Int(hourString)! : ZHHANSStringToNumber(text: hourString)
+        let hourNumber = Int(hourString) ?? 0
+        hour = NSRegularExpression.isMatch(forPattern: "\\d+", in: hourString) ? hourNumber : ZHHANSStringToNumber(text: hourString)
         
         // ----- Minutes
         if match.isNotEmpty(atRangeIndex: minuteGroup) {
@@ -130,7 +131,8 @@ public class ZHHansTimeExpressionParser: Parser {
             } else if minuteString == "正" || minuteString == "整" {
                 minute = 0;
             } else {
-                minute = NSRegularExpression.isMatch(forPattern: "\\d+", in: minuteString) ? Int(minuteString)! : ZHHANSStringToNumber(text: minuteString)
+                let minuteNumber = Int(minuteString) ?? 0
+                minute = NSRegularExpression.isMatch(forPattern: "\\d+", in: minuteString) ? minuteNumber : ZHHANSStringToNumber(text: minuteString)
             }
         } else if hour > 100 {
             minute = hour % 100
@@ -282,7 +284,8 @@ public class ZHHansTimeExpressionParser: Parser {
         // ----- Second
         if match.isNotEmpty(atRangeIndex: secondGroup) {
             let secondString = match.string(from: secondText, atRangeIndex: secondGroup)
-            let second = NSRegularExpression.isMatch(forPattern: "\\d+", in: secondString) ? Int(secondString)! : ZHHANSStringToNumber(text: secondString)
+            let number = Int(secondString) ?? 0
+            let second = NSRegularExpression.isMatch(forPattern: "\\d+", in: secondString) ? number : ZHHANSStringToNumber(text: secondString)
             
             if second >= 60 {
                 return nil
@@ -291,7 +294,8 @@ public class ZHHansTimeExpressionParser: Parser {
         }
         
         hourString = match.string(from: secondText, atRangeIndex: hourGroup)
-        hour = NSRegularExpression.isMatch(forPattern: "\\d+", in: hourString) ? Int(hourString)! : ZHHANSStringToNumber(text: hourString)
+        let hourNumber2 = Int(hourString) ?? 0
+        hour = NSRegularExpression.isMatch(forPattern: "\\d+", in: hourString) ? hourNumber2 : ZHHANSStringToNumber(text: hourString)
         
         // ----- Minutes
         if match.isNotEmpty(atRangeIndex: minuteGroup) {
@@ -302,7 +306,8 @@ public class ZHHansTimeExpressionParser: Parser {
             } else if minuteString == "正" || minuteString == "整" {
                 minute = 0
             } else {
-                minute = NSRegularExpression.isMatch(forPattern: "\\d+", in: minuteString) ? Int(minuteString)! : ZHHANSStringToNumber(text: minuteString)
+                let minuteNumber = Int(minuteString) ?? 0
+                minute = NSRegularExpression.isMatch(forPattern: "\\d+", in: minuteString) ? minuteNumber : ZHHANSStringToNumber(text: minuteString)
             }
         } else if hour > 100 {
             minute = hour % 100;

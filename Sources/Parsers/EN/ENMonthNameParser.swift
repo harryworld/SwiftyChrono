@@ -32,7 +32,7 @@ public class ENMonthNameParser: Parser {
         
         if match.isNotEmpty(atRangeIndex: yearGroup) {
             let yearText = match.string(from: text, atRangeIndex: yearGroup)
-            var year = Int(yearText)!
+            var year = Int(yearText) ?? 0
             
             if match.isNotEmpty(atRangeIndex: yearBeGroup) {
                 let yearBe = match.string(from: text, atRangeIndex: yearBeGroup)

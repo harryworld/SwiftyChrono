@@ -81,12 +81,12 @@ public class FRTimeExpressionParser: Parser {
             meridiem = 0
             hour = 0
         } else {
-            hour = Int(hourText.replacingOccurrences(of: "h", with: ""))!
+            hour = Int(hourText.replacingOccurrences(of: "h", with: "")) ?? 0
         }
         
         // ----- Minutes
         if match.isNotEmpty(atRangeIndex: minuteGroup) {
-            minute = Int(match.string(from: text, atRangeIndex: minuteGroup))!
+            minute = Int(match.string(from: text, atRangeIndex: minuteGroup)) ?? 0
         } else if hour > 100 {
             minute = hour % 100
             hour = hour/100
@@ -159,7 +159,7 @@ public class FRTimeExpressionParser: Parser {
         
         // ----- Second
         if match.isNotEmpty(atRangeIndex: secondGroup) {
-            let second = Int(match.string(from: secondText, atRangeIndex: secondGroup))!
+            let second = Int(match.string(from: secondText, atRangeIndex: secondGroup)) ?? 0
             if second >= 60 {
                 return nil
             }
@@ -167,11 +167,11 @@ public class FRTimeExpressionParser: Parser {
             result.end?.assign(.second, value: second)
         }
         
-        hour = Int(match.string(from: secondText, atRangeIndex: hourGroup).replacingOccurrences(of: "h", with: ""))!
+        hour = Int(match.string(from: secondText, atRangeIndex: hourGroup).replacingOccurrences(of: "h", with: "")) ?? 0
         
         // ----- Minute
         if match.isNotEmpty(atRangeIndex: minuteGroup) {
-            minute = Int(match.string(from: secondText, atRangeIndex: minuteGroup))!
+            minute = Int(match.string(from: secondText, atRangeIndex: minuteGroup)) ?? 0
             if minute >= 60 {
                 return result
             }

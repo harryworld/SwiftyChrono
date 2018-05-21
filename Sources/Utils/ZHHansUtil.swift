@@ -62,7 +62,7 @@ func ZHHANSStringToYear(text: String) -> Int {
         string += "\(ZHHANS_NUMBER[char]!)"
     }
     
-    return Int(string)!
+    return Int(string) ?? 0
 }
 
 

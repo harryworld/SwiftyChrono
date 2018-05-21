@@ -27,9 +27,9 @@ public class JPStandardParser: Parser {
         var startMoment = ref
         var result = ParsedResult(ref: ref, index: index, text: matchText)
         
-        let month = Int(match.string(from: text, atRangeIndex: monthGroup).hankakuOnlyNumber)!
+        let month = Int(match.string(from: text, atRangeIndex: monthGroup).hankakuOnlyNumber) ?? 0
         
-        let day = Int(match.string(from: text, atRangeIndex: dayGroup).hankakuOnlyNumber)!
+        let day = Int(match.string(from: text, atRangeIndex: dayGroup).hankakuOnlyNumber) ?? 0
         
         
         startMoment = startMoment
@@ -59,7 +59,7 @@ public class JPStandardParser: Parser {
         } else if NSRegularExpression.isMatch(forPattern: "同年", in: text) {
             result.start.assign(.year, value: startMoment.year)
         } else {
-            var year = Int(match.string(from: text, atRangeIndex: yearNumberGroup).hankakuOnlyNumber)!
+            var year = Int(match.string(from: text, atRangeIndex: yearNumberGroup).hankakuOnlyNumber) ?? 0
             if match.isNotEmpty(atRangeIndex: eraGroup) {
                 let era = match.string(from: text, atRangeIndex: eraGroup)
                 if era == "平成" {

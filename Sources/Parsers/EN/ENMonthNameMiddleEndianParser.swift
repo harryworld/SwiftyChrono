@@ -44,14 +44,15 @@ public class ENMonthNameMiddleEndianParser: Parser {
         var result = ParsedResult(ref: ref, index: index, text: matchText)
         
         let month = EN_MONTH_OFFSET[match.string(from: text, atRangeIndex: monthNameGroup).lowercased()]!
+        let number = Int(match.string(from: text, atRangeIndex: dateNumGroup)) ?? 0
         let day = match.isNotEmpty(atRangeIndex: dateNumGroup) ?
-            Int(match.string(from: text, atRangeIndex: dateNumGroup))! :
+            number :
             EN_ORDINAL_WORDS[match.string(from: text, atRangeIndex: dateGroup).replacingOccurrences(of: "-", with: " ").lowercased()]!
         
         let yearGroupNotEmpty = match.isNotEmpty(atRangeIndex: yearGroup)
         if yearGroupNotEmpty || match.isNotEmpty(atRangeIndex: yearGroup2) {
             let yearText = match.string(from: text, atRangeIndex: yearGroupNotEmpty ? yearGroup : yearGroup2)
-            var year = Int(yearText)!
+            var year = Int(yearText) ?? 0
             
             let yearBE = match.isNotEmpty(atRangeIndex: yearBeGroup) ? match.string(from: text, atRangeIndex: yearBeGroup) : match.isNotEmpty(atRangeIndex: yearBeGroup2) ? match.string(from: text, atRangeIndex: yearBeGroup2) : ""
             if !yearBE.isEmpty {

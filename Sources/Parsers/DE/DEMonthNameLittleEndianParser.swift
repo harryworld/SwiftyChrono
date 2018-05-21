@@ -44,13 +44,14 @@ public class DEMonthNameLittleEndianParser: Parser {
             return nil
         }
         
+        let number = Int(match.string(from: text, atRangeIndex: dateNumGroup)) ?? 0
         let day = match.isNotEmpty(atRangeIndex: dateNumGroup) ?
-            Int(match.string(from: text, atRangeIndex: dateNumGroup))! :
+            number :
             DE_ORDINAL_WORDS[match.string(from: text, atRangeIndex: dateGroup).trimmed().lowercased()]!
         
         if match.isNotEmpty(atRangeIndex: yearGroup) {
             let yearText = match.string(from: text, atRangeIndex: yearGroup)
-            var year = Int(yearText)!
+            var year = Int(yearText) ?? 0
             
             if match.isNotEmpty(atRangeIndex: yearBeGroup) {
                 let yearBe = match.string(from: text, atRangeIndex: yearBeGroup)

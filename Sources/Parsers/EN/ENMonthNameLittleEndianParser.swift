@@ -41,13 +41,14 @@ public class ENMonthNameLittleEndianParser: Parser {
         
         let month = EN_MONTH_OFFSET[match.string(from: text, atRangeIndex: monthNameGroup).lowercased()]!
         
+        let number = Int(match.string(from: text, atRangeIndex: dateNumGroup)) ?? 0
         let day = match.isNotEmpty(atRangeIndex: dateNumGroup) ?
-            Int(match.string(from: text, atRangeIndex: dateNumGroup))! :
+            number :
             EN_ORDINAL_WORDS[match.string(from: text, atRangeIndex: dateGroup).trimmed().replacingOccurrences(of: "-", with: " ").lowercased()]!
         
         if match.isNotEmpty(atRangeIndex: yearGroup) {
             let yearText = match.string(from: text, atRangeIndex: yearGroup)
-            var year = Int(yearText)!
+            var year = Int(yearText) ?? 0
             
             if match.isNotEmpty(atRangeIndex: yearBeGroup) {
                 let yearBe = match.string(from: text, atRangeIndex: yearBeGroup)
