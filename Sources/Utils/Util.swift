@@ -60,6 +60,7 @@ extension String {
         }
         let start = index(startIndex, offsetBy: startIdx)
         let end = endIdx != nil ? index(startIndex, offsetBy: endIdx!) : endIndex
+        guard start <= end else { return "" }
         return substring(with: start..<end)
     }
     
