@@ -54,9 +54,10 @@ extension String {
         if startIdx < 0 || (endIdx != nil && endIdx! < 0) {
             return ""
         }
-			let start = index(startIndex, offsetBy: startIdx)
-			let end = endIdx != nil ? index(startIndex, offsetBy: endIdx!) : endIndex
-			return String(self[start..<end])
+        let start = index(startIndex, offsetBy: startIdx)
+        let end = endIdx != nil ? index(startIndex, offsetBy: endIdx!) : endIndex
+        guard start <= end else { return "" }
+        return String(self[start..<end])
     }
     
     func range(ofStartIndex idx: Int, length: Int) -> Range<String.Index> {
