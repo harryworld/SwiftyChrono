@@ -25,8 +25,6 @@ private let openningGroup = 1
 private let endingGroup = 6
 
 private let weekdayGroup = 2
-private let monthGroup = 3
-private let dayGroup = 4
 private let yearGroup = 5
 
 public class ENSlashDateFormatParser: Parser {
@@ -61,6 +59,17 @@ public class ENSlashDateFormatParser: Parser {
         }
         
         var year = match.isNotEmpty(atRangeIndex: yearGroup) ? Int(match.string(from: text, atRangeIndex: yearGroup)) ?? ref.year : ref.year
+        
+        let littleEndian = opt[.littleEndian] ?? 0
+        let monthGroup: Int
+        let dayGroup: Int
+        if littleEndian == 1 {
+            monthGroup = 4
+            dayGroup = 3
+        } else {
+            monthGroup = 3
+            dayGroup = 4
+        }
         var month = match.isNotEmpty(atRangeIndex: monthGroup) ? Int(match.string(from: text, atRangeIndex: monthGroup)) ?? 0 : 0
         var day = match.isNotEmpty(atRangeIndex: dayGroup) ? Int(match.string(from: text, atRangeIndex: dayGroup)) ?? 0 : 0
         
