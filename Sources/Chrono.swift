@@ -9,12 +9,13 @@
 import Foundation
 
 public enum OptionType: String { case
-    yearRemoval = "yearRemoval",
     morning = "morning",
     afternoon = "afternoon",
     evening = "evening",
     noon = "noon",
-    forwardDate = "forwardDate"
+    yearRemoval = "yearRemoval",
+    forwardDate = "forwardDate",
+    littleEndian = "littleEndian"
 }
 
 public struct Chrono {

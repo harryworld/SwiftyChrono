@@ -47,6 +47,32 @@ class TestEN: ChronoJSXCTestCase {
         XCTAssertEqual(results.length, 1)
     }
     
+    func testLittleEndian() {
+        Chrono.sixMinutesFixBefore1900 = true
+        Chrono.preferredLanguage = .english
+        
+        var dateComponents = DateComponents()
+        dateComponents.year = 2017
+        dateComponents.month = 8
+        dateComponents.day = 18
+        dateComponents.calendar = Calendar.current
+        
+        let chrono = Chrono()
+        let results = chrono.parse(
+            "12/11/2017",
+            dateComponents.date!, [
+                .littleEndian: 1
+            ])
+        
+        XCTAssertEqual(results.length, 1)
+        if let result = results.first {
+            print(result.text)
+            XCTAssertEqual(result.start.date.year, 2017)
+            XCTAssertEqual(result.start.date.month, 11)
+            XCTAssertEqual(result.start.date.day, 12)
+        }
+    }
+    
     func test24Hour() {
         Chrono.sixMinutesFixBefore1900 = true
         Chrono.preferredLanguage = .english
