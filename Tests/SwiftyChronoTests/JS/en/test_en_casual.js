@@ -364,6 +364,14 @@ test('Test - Random text', function() {
     ok(result.start.get('month') == 10, JSON.stringify(result.start));
     ok(result.start.get('day') == 2, JSON.stringify(result.start));
     ok(result.start.get('hour') == 6, JSON.stringify(result.start));
+    
+    var text = "tomorrow night";
+    var result = chrono.parse(text, new Date(2016, 10-1, 1, 8))[0];
+    ok(result.text == text, result.text);
+    ok(result.start.get('year') == 2016, JSON.stringify(result.start));
+    ok(result.start.get('month') == 10, JSON.stringify(result.start));
+    ok(result.start.get('day') == 2, JSON.stringify(result.start));
+    ok(result.start.get('hour') == 18, JSON.stringify(result.start));
 });
 
 

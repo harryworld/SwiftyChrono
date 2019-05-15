@@ -8,7 +8,7 @@
 
 import Foundation
 
-private let PATTERN = "(\\W|^)((this)?\\s*(morning|afternoon|evening|noon))"
+private let PATTERN = "(\\W|^)((this)?\\s*(morning|afternoon|evening|night|noon))"
 private let timeMatch = 4
 
 public class ENCasualTimeParser: Parser {
@@ -23,7 +23,7 @@ public class ENCasualTimeParser: Parser {
             switch time {
             case "afternoon":
                 result.start.imply(.hour, to: opt[.afternoon] ?? 15)
-            case "evening":
+            case "evening", "night":
                 result.start.imply(.hour, to: opt[.evening] ?? 18)
             case "morning":
                 result.start.imply(.hour, to: opt[.morning] ?? 6)
