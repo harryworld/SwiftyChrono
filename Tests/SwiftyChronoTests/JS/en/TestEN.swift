@@ -165,16 +165,74 @@ class TestEN: ChronoJSXCTestCase {
         }
     }
     
+    func testPastMonthOnly() {
+        Chrono.sixMinutesFixBefore1900 = true
+        Chrono.preferredLanguage = .english
+        
+        var dateComponents = DateComponents()
+        dateComponents.year = 2017
+        dateComponents.month = 8
+        dateComponents.day = 18
+        dateComponents.calendar = Calendar.current
+        
+        let chrono = Chrono()
+        let results = chrono.parse(
+            "Aug",
+            dateComponents.date!, [
+                .forwardDate: 1
+            ])
+        XCTAssertEqual(results.length, 1)
+        
+        if let result = results.first {
+            print(result.text)
+            XCTAssertEqual(result.start.date.month, 8)
+            XCTAssertEqual(result.start.date.year, 2018)
+        }
+    }
+    
+    func testSameDay() {
+        Chrono.sixMinutesFixBefore1900 = true
+        Chrono.preferredLanguage = .english
+        
+        var dateComponents = DateComponents()
+        dateComponents.year = 2017
+        dateComponents.month = 8
+        dateComponents.day = 18
+        dateComponents.hour = 15
+        dateComponents.timeZone = TimeZone(abbreviation: "HKT")
+        dateComponents.calendar = Calendar.current
+        
+        let chrono = Chrono()
+        let results = chrono.parse(
+            "18 Aug 8pm",
+            dateComponents.date!, [
+                .forwardDate: 1
+            ])
+        XCTAssertEqual(results.length, 1)
+        
+        if let result = results.first {
+            print(result.text)
+            XCTAssertEqual(result.start.date.hour, 20)
+            XCTAssertEqual(result.start.date.day, 18)
+            XCTAssertEqual(result.start.date.month, 8)
+            XCTAssertEqual(result.start.date.year, 2017)
+        }
+    }
+    
     func testDateTimeRefinerPastYear() {
         Chrono.sixMinutesFixBefore1900 = true
         Chrono.preferredLanguage = .english
         
-        let now = Date()
+        var dateComponents = DateComponents()
+        dateComponents.year = 2017
+        dateComponents.month = 8
+        dateComponents.day = 18
+        dateComponents.calendar = Calendar.current
         
         let chrono = Chrono()
         let results = chrono.parse(
             "Aug 2000",
-            now, [
+            dateComponents.date!, [
                 .yearRemoval: 1,
                 .forwardDate: 1
             ])
@@ -182,6 +240,7 @@ class TestEN: ChronoJSXCTestCase {
         
         if let result = results.first {
             print(result.text)
+            XCTAssertEqual(result.start.date.year, 2018)
             XCTAssertEqual(result.start.date.month, 8)
             XCTAssertEqual(result.start.date.hour, 20)
         }
@@ -273,4 +332,124 @@ class TestEN: ChronoJSXCTestCase {
         }
     }
     
+    func testOptionForwardWeekday() {
+        Chrono.sixMinutesFixBefore1900 = true
+        Chrono.preferredLanguage = .english
+        
+        let text = "Monday - Wednesday"
+        
+        var dateComponents = DateComponents()
+        dateComponents.year = 2012
+        dateComponents.month = 8
+        dateComponents.day = 9
+        dateComponents.calendar = Calendar.current
+        
+        let chrono = Chrono()
+        let results = chrono.parse(
+            text,
+            dateComponents.date!, [
+                .forwardDate: 1
+            ])
+        
+        XCTAssertEqual(results.length, 1)
+        if let result = results.first {
+            XCTAssertEqual(result.text, "Monday - Wednesday")
+            XCTAssertEqual(result.start.date.year, 2012)
+            XCTAssertEqual(result.start.date.month, 8)
+            XCTAssertEqual(result.start.date.day, 13)
+            if let end = result.end {
+                XCTAssertEqual(end.date.year, 2012)
+                XCTAssertEqual(end.date.month, 8)
+                XCTAssertEqual(end.date.day, 15)
+            }
+        }
+        
+        let text2 = "Wednesday - Monday"
+        
+        let results2 = chrono.parse(
+            text2,
+            dateComponents.date!, [
+                .forwardDate: 1
+            ])
+        
+        XCTAssertEqual(results2.length, 1)
+        if let result2 = results2.first {
+            // Weekdays will be sorted by weekday, thus reverted here.
+            XCTAssertEqual(result2.text, "Wednesday - Monday")
+            XCTAssertEqual(result2.start.date.year, 2012)
+            XCTAssertEqual(result2.start.date.month, 8)
+            XCTAssertEqual(result2.start.date.day, 13)
+            if let end = result2.end {
+                XCTAssertEqual(end.date.year, 2012)
+                XCTAssertEqual(end.date.month, 8)
+                XCTAssertEqual(end.date.day, 15)
+            }
+        }
+    }
+    
+    func testOptionForwardWeekdaysOnly() {
+        Chrono.sixMinutesFixBefore1900 = true
+        Chrono.preferredLanguage = .english
+        
+        let text = "this Friday to next Monday"
+        
+        var dateComponents = DateComponents()
+        dateComponents.year = 2016
+        dateComponents.month = 8
+        dateComponents.day = 4
+        dateComponents.calendar = Calendar.current
+        
+        let chrono = Chrono()
+        let results = chrono.parse(
+            text,
+            dateComponents.date!, [
+                .forwardDate: 1
+            ])
+        
+        XCTAssertEqual(results.length, 1)
+        if let result = results.first {
+            XCTAssertEqual(result.text, "this Friday to next Monday")
+            XCTAssertEqual(result.start.date.year, 2016)
+            XCTAssertEqual(result.start.date.month, 8)
+            XCTAssertEqual(result.start.date.day, 5)
+            if let end = result.end {
+                XCTAssertEqual(end.date.year, 2016)
+                XCTAssertEqual(end.date.month, 8)
+                XCTAssertEqual(end.date.day, 8)
+            }
+        }
+    }
+    
+    func testOptionForwardExactDay() {
+        Chrono.sixMinutesFixBefore1900 = true
+        Chrono.preferredLanguage = .english
+        
+        let text = "6 Aug to 12 Aug"
+        
+        var dateComponents = DateComponents()
+        dateComponents.year = 2012
+        dateComponents.month = 8
+        dateComponents.day = 9
+        dateComponents.calendar = Calendar.current
+        
+        let chrono = Chrono()
+        let results = chrono.parse(
+            text,
+            dateComponents.date!, [
+                .forwardDate: 1
+            ])
+        
+        XCTAssertEqual(results.length, 1)
+        if let result = results.first {
+            XCTAssertEqual(result.text, "6 Aug to 12 Aug")
+            XCTAssertEqual(result.start.date.year, 2013)
+            XCTAssertEqual(result.start.date.month, 8)
+            XCTAssertEqual(result.start.date.day, 6)
+            if let end = result.end {
+                XCTAssertEqual(end.date.year, 2013)
+                XCTAssertEqual(end.date.month, 8)
+                XCTAssertEqual(end.date.day, 12)
+            }
+        }
+    }
 }

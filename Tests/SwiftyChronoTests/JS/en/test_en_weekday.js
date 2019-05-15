@@ -257,14 +257,14 @@ test("Test - Weekday Overlap", function () {
 
 test('Test - forward dates only option', function () {
 
-    var text = "this Friday to this Monday";
+    var text = "this Friday to next Monday";
     var results = chrono.casual.parse(text, new Date(2016, 8-1, 4), {forwardDate: true});
     ok(results.length == 1, JSON.stringify(results));
 
     var result = results[0];
     if (result) {
         ok(result.index == 0, 'Wrong index');
-        ok(result.text == 'this Friday to this Monday', result.text);
+        ok(result.text == 'this Friday to next Monday', result.text);
 
         ok(result.start, JSON.stringify(result.start));
         ok(result.start.get('year') == 2016, 'Test Result - (Year) ' + JSON.stringify(result.start));
@@ -288,9 +288,9 @@ test('Test - forward dates only option', function () {
         ok(result.end.get('day') == 8, 'Test Result - (Day) ' + JSON.stringify(result.end));
         ok(result.end.get('weekday') == 1, 'Test Result - (Weekday) ' + JSON.stringify(result.end));
 
-        ok(!result.end.isCertain('day'));
-        ok(!result.end.isCertain('month'));
-        ok(!result.end.isCertain('year'));
+        ok(result.end.isCertain('day'));
+        ok(result.end.isCertain('month'));
+        ok(result.end.isCertain('year'));
         ok(result.end.isCertain('weekday'));
 
         var resultDate = result.end.date();

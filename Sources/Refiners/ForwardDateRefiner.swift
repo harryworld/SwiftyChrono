@@ -22,7 +22,7 @@ class ForwardDateRefiner: Refiner {
             var result = results[i]
             var refMoment = result.ref
             
-            if result.start.isCertain(component: .day) && result.start.isCertain(component: .month) &&
+            if /*result.start.isCertain(component: .day) &&*/ result.start.isCertain(component: .month) &&
                 !result.start.isCertain(component: .year) && refMoment.isAfter(result.start.moment) {
                 // Adjust year into the future
                 for _ in 0..<3 {
@@ -45,11 +45,32 @@ class ForwardDateRefiner: Refiner {
             {
                 // Adjust date to the coming week
                 let weekday = result.start[.weekday]!
-                refMoment = refMoment.setOrAdded(refMoment.weekday > weekday ? weekday + 7 : weekday, .weekday)
+                
+                let shouldAdjustWeekday: Bool = refMoment.weekday > weekday
+                
+                // Adjust start date
+                refMoment = refMoment.setOrAdded(
+                    shouldAdjustWeekday ? weekday + 7 : weekday,
+                    .weekday)
                 
                 result.start.imply(.day, to: refMoment.day)
                 result.start.imply(.month, to: refMoment.month)
                 result.start.imply(.year, to: refMoment.year)
+                
+                // Adjust end date
+                if let resultEnd = result.end {
+                    var refMomentEnd = result.ref
+                    let weekdayEnd = resultEnd[.weekday]!
+                    
+                    refMomentEnd = refMomentEnd.setOrAdded(
+                        shouldAdjustWeekday ? weekdayEnd + 7 : weekdayEnd,
+                        .weekday)
+                    
+                    result.end?.imply(.day, to: refMomentEnd.day)
+                    result.end?.imply(.month, to: refMomentEnd.month)
+                    result.end?.imply(.year, to: refMomentEnd.year)
+                }
+                
                 result.tags[.forwardDateRefiner] = true
             }
             

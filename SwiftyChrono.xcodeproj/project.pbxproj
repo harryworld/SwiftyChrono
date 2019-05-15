@@ -975,7 +975,7 @@
 		C4169A191E2F7BC8007B7423 /* ENCasualTimeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENCasualTimeParser.swift; sourceTree = "<group>"; };
 		C4169A211E2F8209007B7423 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		C4169A291E307CE6007B7423 /* ENCasualDateParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ENCasualDateParser.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		C43A02DC1E30A8C50041B7B1 /* ENMergeDateTimeRefiner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ENMergeDateTimeRefiner.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		C43A02DC1E30A8C50041B7B1 /* ENMergeDateTimeRefiner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ENMergeDateTimeRefiner.swift; sourceTree = "<group>"; };
 		C43A78201E48347A005E3BFF /* ChronoJSXCTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChronoJSXCTestCase.swift; sourceTree = "<group>"; };
 		C43A782A1E484B5E005E3BFF /* test_en.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test_en.js; sourceTree = "<group>"; };
 		C43A782B1E484B5E005E3BFF /* test_en_casual.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test_en_casual.js; sourceTree = "<group>"; };
