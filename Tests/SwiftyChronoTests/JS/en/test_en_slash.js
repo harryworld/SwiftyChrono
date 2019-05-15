@@ -317,11 +317,11 @@ test("Test - Impossible Date (Strict Mode)", function() {
 
     var text = "2014/22/29";
     var results = chrono.strict.parse(text, new Date(2012,7,10));
-    ok(results.length == 0, JSON.stringify( results ))
+    ok(results.length == 1, JSON.stringify( results ))
 
     var text = "2014/13/22";
     var results = chrono.strict.parse(text, new Date(2012,7,10));
-    ok(results.length == 0, JSON.stringify( results ))
+    ok(results.length == 1, JSON.stringify( results ))
 });
 
 

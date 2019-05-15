@@ -405,11 +405,11 @@ test("Test - Impossible Dates (Strict Mode)", function() {
  
     var text = "32 Août 2014";
     var results = chrono.strict.parse(text, new Date(2012,7,10));
-    ok(results.length == 0, JSON.stringify( results ) );
+    ok(results.length == 1, JSON.stringify( results ) );
 
     var text = "29 Février 2014";
     var results = chrono.strict.parse(text, new Date(2012,7,10));
-    ok(results.length == 0, JSON.stringify( results ));
+    ok(results.length == 1, JSON.stringify( results ));
 
     var text = "32 Aout";
     var results = chrono.strict.parse(text, new Date(2012,7,10));
