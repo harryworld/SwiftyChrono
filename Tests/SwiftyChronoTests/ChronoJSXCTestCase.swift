@@ -120,7 +120,8 @@ public class ChronoJSXCTestCase: XCTestCase, ChronoJSTestable {
             // make sure this logic didn't change in chrono's parseDate()
             let results = chrono.parse(text: text, refDate: ref as Date, opt: opts)
             self.lastResultsForFailCase = results
-            return (results.first?.start.date ?? Date()) as NSDate
+            let date = results.first?.start.date ?? Date()
+            return date as NSDate
             
         }
         jsContext.setObject(unsafeBitCast(chronoParseDate, to: AnyObject.self), forKeyedSubscript: "chronoParseDate" as (NSCopying & NSObjectProtocol))

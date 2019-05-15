@@ -82,7 +82,7 @@ public class ENTimeExpressionParser: Parser {
             meridiem = 0
             hour = 0
         } else {
-            switch hourText.characters.count {
+            switch hourText.count {
             case 3:
                 hour = Int(hourText.substring(from: 0, to: 1)) ?? 0
                 minute = Int(hourText.substring(from: 1, to: 3)) ?? 0

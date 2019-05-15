@@ -21,7 +21,7 @@ class YearRemovalRefiner: Refiner {
         
         for result in results {
             var r = result
-            var refMoment = r.ref
+            let refMoment = r.ref
             
             if (result.start.date.year < refMoment.year || result.start.date.year >= 2050)
                 && result.yearBE == nil {
