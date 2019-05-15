@@ -2,6 +2,10 @@
 test("Test - Single Expression", function() {
 
 
+    var text = "In Tag";
+    var results = chrono.parse(text, new Date(2012,7,10));
+    ok(results.length == 1, JSON.stringify( results ) );
+    
     var text = "In 5 Tagen müssen wir fertig sein.";
     var results = chrono.parse(text, new Date(2012,7,10));
     ok(results.length == 1, JSON.stringify( results ) );
