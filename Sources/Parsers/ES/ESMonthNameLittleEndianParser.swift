@@ -33,11 +33,11 @@ public class ESMonthNameLittleEndianParser: Parser {
         
         let month = ES_MONTH_OFFSET[match.string(from: text, atRangeIndex: monthNameGroup).lowercased()]!
         
-        let day = Int(match.string(from: text, atRangeIndex: dateGroup))!
+        let day = Int(match.string(from: text, atRangeIndex: dateGroup)) ?? 0
         
         if match.isNotEmpty(atRangeIndex: yearGroup) {
             let yearText = match.string(from: text, atRangeIndex: yearGroup)
-            var year = Int(yearText.trimmed())!
+            var year = Int(yearText.trimmed()) ?? 0
             
             if match.isNotEmpty(atRangeIndex: yearBeGroup) {
                 let yearBe = match.string(from: text, atRangeIndex: yearBeGroup)
@@ -84,7 +84,7 @@ public class ESMonthNameLittleEndianParser: Parser {
         // Text can be 'range' value. Such as '12 - 13 January 2012'
         if match.isNotEmpty(atRangeIndex: dateToGroup) {
             result.end = result.start.clone()
-            result.end?.assign(.day, value: Int(match.string(from: text, atRangeIndex: dateToGroup))!)
+            result.end?.assign(.day, value: Int(match.string(from: text, atRangeIndex: dateToGroup)) ?? 0)
         }
         
         result.tags[.esMonthNameLittleEndianParser] = true

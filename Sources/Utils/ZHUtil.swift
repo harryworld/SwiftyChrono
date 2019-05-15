@@ -63,7 +63,7 @@ func ZHStringToYear(text: String) -> Int {
         string += "\(ZH_NUMBER[char]!)"
     }
     
-    return Int(string)!
+    return Int(string) ?? 0
 }
 
 

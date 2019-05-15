@@ -45,7 +45,7 @@ public class ENTimeAgoFormatParser: Parser {
         } else if NSRegularExpression.isMatch(forPattern: "half", in: numberText) {
             number = HALF
         } else {
-            number = Int(numberText)!
+            number = Int(numberText) ?? 0
         }
         
         var date = ref
