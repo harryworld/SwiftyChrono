@@ -1,5 +1,9 @@
 test("Test - Single Expression", function () {
 
+    var text = "週四";
+    var results = chrono.casual.parse(text, new Date(2016, 9-1, 2));
+    ok(results.length == 1, JSON.stringify(results));
+     
     var text = "星期四";
     var results = chrono.casual.parse(text, new Date(2016, 9-1, 2));
     ok(results.length == 1, JSON.stringify(results));
