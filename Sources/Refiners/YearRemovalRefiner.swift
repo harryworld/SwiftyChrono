@@ -17,17 +17,16 @@ class YearRemovalRefiner: Refiner {
             return results
         }
         
-        let now = Date()
-        
         var filteredResults = [ParsedResult]()
         
         for result in results {
             var r = result
+            var refMoment = r.ref
             
-            if (result.start.date.year < now.year || result.start.date.year >= 2050)
+            if (result.start.date.year < refMoment.year || result.start.date.year >= 2050)
                 && result.yearBE == nil {
                 r.start.knownValues.removeValue(forKey: .year)
-                r.start.imply(.year, to: now.year)
+                r.start.imply(.year, to: refMoment.year)
                 if let yearText = result.yearText {
                     r.text = r.text.replacingOccurrences(of: yearText, with: "")
                 }
